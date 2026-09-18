@@ -1,0 +1,23 @@
+{
+  "name": "GameFrameX.CocosCreator",
+  "version": "0.1.0",
+  "description": "GameFrameX 的 Cocos Creator 3.8.x 客户端(以 Unity 版为基准从零迁移)",
+  "type": "project",
+  "creator": {
+    "version": "3.8.0"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "gen:proto": "bash ../Protobuf/Proto2TsExport_CocosCreator.sh",
+    "gen:config": "bash ../Config/gen-cocos-json.sh",
+    "pretest": "node tools/sync-framework.mjs"
+  },
+  "devDependencies": {
+    "protobufjs": "^7.4.0",
+    "protobufjs-cli": "^1.1.3",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.9"
+  },
+  "uuid": "a9a973b8-b3b7-4ae6-aad6-991223de5cbd"
+}

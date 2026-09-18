@@ -1,0 +1,15 @@
+{
+  /* Cocos Creator 3.x 项目标准 tsconfig:类型提示数据由编辑器生成于 temp/tsconfig.cocos.json */
+  "extends": "./temp/tsconfig.cocos.json",
+  "include": [
+    "assets/gameframex/**/*.ts",
+    "assets/scripts/**/*.ts",
+    "assets/hotfix/**/*.ts",
+    "tests/**/*.ts"
+  ],
+  "compilerOptions": {
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true
+  }
+}

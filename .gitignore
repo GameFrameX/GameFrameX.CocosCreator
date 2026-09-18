@@ -1,0 +1,19 @@
+# Cocos Creator 生成目录(官方 VCS 指南:不入库)
+library/
+temp/
+local/
+build/
+native/
+
+# Node
+node_modules/
+
+# 系统
+.DS_Store
+
+# 测试产物
+coverage/
+
+# 框架生成物(由 com.gameframex.framework 扩展同步)
+/assets/gameframex/
+/assets/gameframex.meta

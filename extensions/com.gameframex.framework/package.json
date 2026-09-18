@@ -1,0 +1,36 @@
+{
+  "name": "com.gameframex.framework",
+  "version": "0.1.0",
+  "description": "GameFrameX 框架层(以 Unity 版为基准迁移):承载框架源码单一事实源(runtime/gameframex),一键镜像同步到项目 assets/gameframex,由扩展管理器安装/启停/更新。",
+  "main": "./src/main.js",
+  "author": "GameFrameX",
+  "license": "MIT",
+  "editor": ">=3.8.0",
+  "contributions": {
+    "menu": [
+      {
+        "path": "GameFrameX/同步框架到项目",
+        "message": "sync-framework"
+      },
+      {
+        "path": "GameFrameX/移除项目内框架",
+        "message": "remove-framework"
+      },
+      {
+        "path": "GameFrameX/运行单元测试",
+        "message": "run-tests"
+      }
+    ],
+    "messages": {
+      "sync-framework": {
+        "methods": ["sync-framework"]
+      },
+      "remove-framework": {
+        "methods": ["remove-framework"]
+      },
+      "run-tests": {
+        "methods": ["run-tests"]
+      }
+    }
+  }
+}
