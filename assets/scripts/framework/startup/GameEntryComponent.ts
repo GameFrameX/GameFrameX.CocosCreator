@@ -32,9 +32,12 @@ export default class GameEntryComponent extends Component {
         try {
             GameEntry.updateAll(dt);
         } catch (error) {
+            const detail = (error instanceof Error ? `${error.message}\n${error.stack}` : String(error)).slice(0, 400);
             const doc = (globalThis as Record<string, unknown>).document as { documentElement: { setAttribute(n: string, v: string): void } } | undefined;
-            doc?.documentElement.setAttribute("data-gfx-err", (error instanceof Error ? `${error.message} || ${error.stack}` : String(error)).slice(0, 900));
+            doc?.documentElement.setAttribute("data-gfx-err", detail);
             this.setTitle("GFX-ERR");
+            const wxApi = (globalThis as Record<string, unknown>).wx as { showModal(o: { title: string; content: string; showCancel: boolean }): void } | undefined;
+            wxApi?.showModal({ title: "GFX-UPDATE-ERR", content: detail, showCancel: false });
             return;
         }
         this._frame++;
