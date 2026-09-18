@@ -37,6 +37,13 @@ export default class GameEntry {
     }
 
     /**
+     * 已注册模块数(诊断/启动自证用)。
+     */
+    public static get moduleCount(): number {
+        return this._modules.size;
+    }
+
+    /**
      * 是否已注册指定模块。
      */
     public static hasModule(name: string): boolean {

@@ -1,22 +1,22 @@
+// @ts-nocheck
+// 生成物:pbjs static-module(tools/gen-proto-bundle.sh);禁止手改
 /*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
-"use strict";
-
-var $protobuf = require("protobufjs/minimal");
+import $protobuf from "./protobufjs-minimal";
 
 // Common aliases
-var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
+const $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
 
 // Exported root namespace
-var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
+const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.Basic = (function() {
+export const Basic = $root.Basic = (() => {
 
     /**
      * Namespace Basic.
      * @exports Basic
      * @namespace
      */
-    var Basic = {};
+    const Basic = {};
 
     Basic.ReqHeartBeat = (function() {
 
@@ -37,7 +37,7 @@ $root.Basic = (function() {
          */
         function ReqHeartBeat(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -114,7 +114,7 @@ $root.Basic = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -126,7 +126,7 @@ $root.Basic = (function() {
             }
             message = new $root.Basic.ReqHeartBeat();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -201,7 +201,7 @@ $root.Basic = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Basic.ReqHeartBeat();
+            let message = new $root.Basic.ReqHeartBeat();
             if (object.Timestamp != null)
                 if ($util.Long)
                     message.Timestamp = $util.Long.fromValue(object.Timestamp, false);
@@ -230,10 +230,10 @@ $root.Basic = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Timestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Timestamp = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -295,7 +295,7 @@ $root.Basic = (function() {
          */
         function NotifyHeartBeat(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -372,7 +372,7 @@ $root.Basic = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -384,7 +384,7 @@ $root.Basic = (function() {
             }
             message = new $root.Basic.NotifyHeartBeat();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -459,7 +459,7 @@ $root.Basic = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Basic.NotifyHeartBeat();
+            let message = new $root.Basic.NotifyHeartBeat();
             if (object.Timestamp != null)
                 if ($util.Long)
                     message.Timestamp = $util.Long.fromValue(object.Timestamp, false);
@@ -488,10 +488,10 @@ $root.Basic = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Timestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Timestamp = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -552,7 +552,7 @@ $root.Basic = (function() {
          */
         function NotifyServerFullyLoaded(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -619,7 +619,7 @@ $root.Basic = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -631,7 +631,7 @@ $root.Basic = (function() {
             }
             message = new $root.Basic.NotifyServerFullyLoaded();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -741,14 +741,14 @@ $root.Basic = (function() {
     return Basic;
 })();
 
-$root.Common = (function() {
+export const Common = $root.Common = (() => {
 
     /**
      * Namespace Common.
      * @exports Common
      * @namespace
      */
-    var Common = {};
+    const Common = {};
 
     /**
      * ResultCode enum.
@@ -758,7 +758,7 @@ $root.Common = (function() {
      * @property {number} Failed=1 Failed value
      */
     Common.ResultCode = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
+        const valuesById = {}, values = Object.create(valuesById);
         values[valuesById[0] = "Success"] = 0;
         values[valuesById[1] = "Failed"] = 1;
         return values;
@@ -788,7 +788,7 @@ $root.Common = (function() {
      * @property {number} PartialSuccess=17 PartialSuccess value
      */
     Common.OperationStatusCode = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
+        const valuesById = {}, values = Object.create(valuesById);
         values[valuesById[0] = "Ok"] = 0;
         values[valuesById[1] = "ConfigErr"] = 1;
         values[valuesById[2] = "ParamErr"] = 2;
@@ -813,14 +813,14 @@ $root.Common = (function() {
     return Common;
 })();
 
-$root.Bag = (function() {
+export const Bag = $root.Bag = (() => {
 
     /**
      * Namespace Bag.
      * @exports Bag
      * @namespace
      */
-    var Bag = {};
+    const Bag = {};
 
     Bag.BagItem = (function() {
 
@@ -842,7 +842,7 @@ $root.Bag = (function() {
          */
         function BagItem(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -929,7 +929,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -941,7 +941,7 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.BagItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -1023,7 +1023,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.BagItem();
+            let message = new $root.Bag.BagItem();
             if (object.ItemId != null)
                 message.ItemId = object.ItemId | 0;
             if (object.Count != null)
@@ -1054,11 +1054,11 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.ItemId = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Count = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -1122,7 +1122,7 @@ $root.Bag = (function() {
          */
         function ReqBagInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -1189,7 +1189,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -1201,7 +1201,7 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.ReqBagInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -1328,7 +1328,7 @@ $root.Bag = (function() {
         function RespBagInfo(properties) {
             this.ItemDic = {};
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -1370,7 +1370,7 @@ $root.Bag = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic"))
-                for (var keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
                     writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 0 =*/8).int32(keys[i]).uint32(/* id 2, wireType 0 =*/16).int64(message.ItemDic[keys[i]]).ldelim();
             return writer;
         };
@@ -1406,7 +1406,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message, key, value;
+            let end, message, key, value;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -1418,21 +1418,21 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.RespBagInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
                 case 1: {
                         if (message.ItemDic === $util.emptyObject)
                             message.ItemDic = {};
-                        var end2 = reader.uint32() + reader.pos;
+                        let end2 = reader.uint32() + reader.pos;
                         if (end2 > reader.len)
                             throw RangeError("index out of range");
                         reader.len = end2;
                         key = 0;
                         value = 0;
                         while (reader.pos < end2) {
-                            var tag2 = reader.uint32();
+                            let tag2 = reader.uint32();
                             switch (tag2 >>> 3) {
                             case 1:
                                 key = reader.int32();
@@ -1498,8 +1498,8 @@ $root.Bag = (function() {
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic")) {
                 if (!$util.isObject(message.ItemDic))
                     return "ItemDic: object expected";
-                var key = Object.keys(message.ItemDic);
-                for (var i = 0; i < key.length; ++i) {
+                let key = Object.keys(message.ItemDic);
+                for (let i = 0; i < key.length; ++i) {
                     if (!$util.key32Re.test(key[i]))
                         return "ItemDic: integer key{k:int32} expected";
                     if (!$util.isInteger(message.ItemDic[key[i]]) && !(message.ItemDic[key[i]] && $util.isInteger(message.ItemDic[key[i]].low) && $util.isInteger(message.ItemDic[key[i]].high)))
@@ -1526,12 +1526,12 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.RespBagInfo();
+            let message = new $root.Bag.RespBagInfo();
             if (object.ItemDic) {
                 if (!$util.isObject(object.ItemDic))
                     throw TypeError(".Bag.RespBagInfo.ItemDic: object expected");
                 message.ItemDic = {};
-                for (var keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
+                for (let keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
                     if (keys[i] === "__proto__")
                         $util.makeProp(message.ItemDic, keys[i]);
                     if ($util.Long)
@@ -1563,13 +1563,13 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.objects || options.defaults)
                 object.ItemDic = {};
-            var keys2;
+            let keys2;
             if (message.ItemDic && (keys2 = Object.keys(message.ItemDic)).length) {
                 object.ItemDic = {};
-                for (var j = 0; j < keys2.length; ++j) {
+                for (let j = 0; j < keys2.length; ++j) {
                     if (keys2[j] === "__proto__")
                         $util.makeProp(object.ItemDic, keys2[j]);
                     if (typeof BigInt !== "undefined" && options.longs === BigInt)
@@ -1633,7 +1633,7 @@ $root.Bag = (function() {
          */
         function NotifyBagItem(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -1730,7 +1730,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -1742,7 +1742,7 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.NotifyBagItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -1831,7 +1831,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.NotifyBagItem();
+            let message = new $root.Bag.NotifyBagItem();
             if (object.ItemId != null)
                 message.ItemId = object.ItemId | 0;
             if (object.Count != null)
@@ -1871,16 +1871,16 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.ItemId = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Count = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Value = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Value = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -1953,7 +1953,7 @@ $root.Bag = (function() {
         function NotifyBagInfoChanged(properties) {
             this.ItemDic = {};
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -1995,7 +1995,7 @@ $root.Bag = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic"))
-                for (var keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i) {
+                for (let keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i) {
                     writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 0 =*/8).int32(keys[i]);
                     $root.Bag.NotifyBagItem.encode(message.ItemDic[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork(), q + 1).ldelim().ldelim();
                 }
@@ -2033,7 +2033,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message, key, value;
+            let end, message, key, value;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -2045,21 +2045,21 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.NotifyBagInfoChanged();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
                 case 1: {
                         if (message.ItemDic === $util.emptyObject)
                             message.ItemDic = {};
-                        var end2 = reader.uint32() + reader.pos;
+                        let end2 = reader.uint32() + reader.pos;
                         if (end2 > reader.len)
                             throw RangeError("index out of range");
                         reader.len = end2;
                         key = 0;
                         value = null;
                         while (reader.pos < end2) {
-                            var tag2 = reader.uint32();
+                            let tag2 = reader.uint32();
                             switch (tag2 >>> 3) {
                             case 1:
                                 key = reader.int32();
@@ -2125,12 +2125,12 @@ $root.Bag = (function() {
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic")) {
                 if (!$util.isObject(message.ItemDic))
                     return "ItemDic: object expected";
-                var key = Object.keys(message.ItemDic);
-                for (var i = 0; i < key.length; ++i) {
+                let key = Object.keys(message.ItemDic);
+                for (let i = 0; i < key.length; ++i) {
                     if (!$util.key32Re.test(key[i]))
                         return "ItemDic: integer key{k:int32} expected";
                     {
-                        var error = $root.Bag.NotifyBagItem.verify(message.ItemDic[key[i]], long + 1);
+                        let error = $root.Bag.NotifyBagItem.verify(message.ItemDic[key[i]], long + 1);
                         if (error)
                             return "ItemDic." + error;
                     }
@@ -2156,12 +2156,12 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.NotifyBagInfoChanged();
+            let message = new $root.Bag.NotifyBagInfoChanged();
             if (object.ItemDic) {
                 if (!$util.isObject(object.ItemDic))
                     throw TypeError(".Bag.NotifyBagInfoChanged.ItemDic: object expected");
                 message.ItemDic = {};
-                for (var keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
+                for (let keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
                     if (keys[i] === "__proto__")
                         $util.makeProp(message.ItemDic, keys[i]);
                     if (!$util.isObject(object.ItemDic[keys[i]]))
@@ -2188,13 +2188,13 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.objects || options.defaults)
                 object.ItemDic = {};
-            var keys2;
+            let keys2;
             if (message.ItemDic && (keys2 = Object.keys(message.ItemDic)).length) {
                 object.ItemDic = {};
-                for (var j = 0; j < keys2.length; ++j) {
+                for (let j = 0; j < keys2.length; ++j) {
                     if (keys2[j] === "__proto__")
                         $util.makeProp(object.ItemDic, keys2[j]);
                     object.ItemDic[keys2[j]] = $root.Bag.NotifyBagItem.toObject(message.ItemDic[keys2[j]], options, q + 1);
@@ -2251,7 +2251,7 @@ $root.Bag = (function() {
          */
         function ReqComposePet(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -2328,7 +2328,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -2340,7 +2340,7 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.ReqComposePet();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -2415,7 +2415,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.ReqComposePet();
+            let message = new $root.Bag.ReqComposePet();
             if (object.FragmentId != null)
                 message.FragmentId = object.FragmentId | 0;
             return message;
@@ -2437,7 +2437,7 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.FragmentId = 0;
             if (message.FragmentId != null && Object.hasOwnProperty.call(message, "FragmentId"))
@@ -2493,7 +2493,7 @@ $root.Bag = (function() {
          */
         function RespComposePet(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -2570,7 +2570,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -2582,7 +2582,7 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.RespComposePet();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -2657,7 +2657,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.RespComposePet();
+            let message = new $root.Bag.RespComposePet();
             if (object.PetId != null)
                 message.PetId = object.PetId | 0;
             return message;
@@ -2679,7 +2679,7 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.PetId = 0;
             if (message.PetId != null && Object.hasOwnProperty.call(message, "PetId"))
@@ -2736,7 +2736,7 @@ $root.Bag = (function() {
          */
         function ReqUseItem(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -2823,7 +2823,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -2835,7 +2835,7 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.ReqUseItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -2917,7 +2917,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.ReqUseItem();
+            let message = new $root.Bag.ReqUseItem();
             if (object.ItemId != null)
                 message.ItemId = object.ItemId | 0;
             if (object.Count != null)
@@ -2948,11 +2948,11 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.ItemId = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Count = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -3018,7 +3018,7 @@ $root.Bag = (function() {
          */
         function RespUseItem(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -3105,7 +3105,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -3117,7 +3117,7 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.RespUseItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -3199,7 +3199,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.RespUseItem();
+            let message = new $root.Bag.RespUseItem();
             if (object.ItemId != null)
                 message.ItemId = object.ItemId | 0;
             if (object.Count != null)
@@ -3230,11 +3230,11 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.ItemId = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Count = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -3300,7 +3300,7 @@ $root.Bag = (function() {
          */
         function ReqDiscardItem(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -3387,7 +3387,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -3399,7 +3399,7 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.ReqDiscardItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -3481,7 +3481,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.ReqDiscardItem();
+            let message = new $root.Bag.ReqDiscardItem();
             if (object.ItemId != null)
                 message.ItemId = object.ItemId | 0;
             if (object.Count != null)
@@ -3512,11 +3512,11 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.ItemId = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Count = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -3582,7 +3582,7 @@ $root.Bag = (function() {
          */
         function RespDiscardItem(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -3669,7 +3669,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -3681,7 +3681,7 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.RespDiscardItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -3763,7 +3763,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.RespDiscardItem();
+            let message = new $root.Bag.RespDiscardItem();
             if (object.ItemId != null)
                 message.ItemId = object.ItemId | 0;
             if (object.Count != null)
@@ -3794,11 +3794,11 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.ItemId = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Count = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -3863,7 +3863,7 @@ $root.Bag = (function() {
          */
         function ReqSellItem(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -3940,7 +3940,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -3952,7 +3952,7 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.ReqSellItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -4027,7 +4027,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.ReqSellItem();
+            let message = new $root.Bag.ReqSellItem();
             if (object.ItemId != null)
                 message.ItemId = object.ItemId | 0;
             return message;
@@ -4049,7 +4049,7 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.ItemId = 0;
             if (message.ItemId != null && Object.hasOwnProperty.call(message, "ItemId"))
@@ -4106,7 +4106,7 @@ $root.Bag = (function() {
         function RespSellItem(properties) {
             this.ItemDic = {};
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -4148,7 +4148,7 @@ $root.Bag = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic"))
-                for (var keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
                     writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 0 =*/8).int64(keys[i]).uint32(/* id 2, wireType 0 =*/16).int64(message.ItemDic[keys[i]]).ldelim();
             return writer;
         };
@@ -4184,7 +4184,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message, key, value;
+            let end, message, key, value;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -4196,21 +4196,21 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.RespSellItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
                 case 1: {
                         if (message.ItemDic === $util.emptyObject)
                             message.ItemDic = {};
-                        var end2 = reader.uint32() + reader.pos;
+                        let end2 = reader.uint32() + reader.pos;
                         if (end2 > reader.len)
                             throw RangeError("index out of range");
                         reader.len = end2;
                         key = 0;
                         value = 0;
                         while (reader.pos < end2) {
-                            var tag2 = reader.uint32();
+                            let tag2 = reader.uint32();
                             switch (tag2 >>> 3) {
                             case 1:
                                 key = reader.int64();
@@ -4276,8 +4276,8 @@ $root.Bag = (function() {
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic")) {
                 if (!$util.isObject(message.ItemDic))
                     return "ItemDic: object expected";
-                var key = Object.keys(message.ItemDic);
-                for (var i = 0; i < key.length; ++i) {
+                let key = Object.keys(message.ItemDic);
+                for (let i = 0; i < key.length; ++i) {
                     if (!$util.key64Re.test(key[i]))
                         return "ItemDic: integer|Long key{k:int64} expected";
                     if (!$util.isInteger(message.ItemDic[key[i]]) && !(message.ItemDic[key[i]] && $util.isInteger(message.ItemDic[key[i]].low) && $util.isInteger(message.ItemDic[key[i]].high)))
@@ -4304,12 +4304,12 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.RespSellItem();
+            let message = new $root.Bag.RespSellItem();
             if (object.ItemDic) {
                 if (!$util.isObject(object.ItemDic))
                     throw TypeError(".Bag.RespSellItem.ItemDic: object expected");
                 message.ItemDic = {};
-                for (var keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
+                for (let keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
                     if (keys[i] === "__proto__")
                         $util.makeProp(message.ItemDic, keys[i]);
                     if ($util.Long)
@@ -4341,13 +4341,13 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.objects || options.defaults)
                 object.ItemDic = {};
-            var keys2;
+            let keys2;
             if (message.ItemDic && (keys2 = Object.keys(message.ItemDic)).length) {
                 object.ItemDic = {};
-                for (var j = 0; j < keys2.length; ++j) {
+                for (let j = 0; j < keys2.length; ++j) {
                     if (keys2[j] === "__proto__")
                         $util.makeProp(object.ItemDic, keys2[j]);
                     if (typeof BigInt !== "undefined" && options.longs === BigInt)
@@ -4410,7 +4410,7 @@ $root.Bag = (function() {
         function ReqAddItem(properties) {
             this.ItemDic = {};
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -4452,7 +4452,7 @@ $root.Bag = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic"))
-                for (var keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
                     writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 0 =*/8).int32(keys[i]).uint32(/* id 2, wireType 0 =*/16).int64(message.ItemDic[keys[i]]).ldelim();
             return writer;
         };
@@ -4488,7 +4488,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message, key, value;
+            let end, message, key, value;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -4500,21 +4500,21 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.ReqAddItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
                 case 1: {
                         if (message.ItemDic === $util.emptyObject)
                             message.ItemDic = {};
-                        var end2 = reader.uint32() + reader.pos;
+                        let end2 = reader.uint32() + reader.pos;
                         if (end2 > reader.len)
                             throw RangeError("index out of range");
                         reader.len = end2;
                         key = 0;
                         value = 0;
                         while (reader.pos < end2) {
-                            var tag2 = reader.uint32();
+                            let tag2 = reader.uint32();
                             switch (tag2 >>> 3) {
                             case 1:
                                 key = reader.int32();
@@ -4580,8 +4580,8 @@ $root.Bag = (function() {
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic")) {
                 if (!$util.isObject(message.ItemDic))
                     return "ItemDic: object expected";
-                var key = Object.keys(message.ItemDic);
-                for (var i = 0; i < key.length; ++i) {
+                let key = Object.keys(message.ItemDic);
+                for (let i = 0; i < key.length; ++i) {
                     if (!$util.key32Re.test(key[i]))
                         return "ItemDic: integer key{k:int32} expected";
                     if (!$util.isInteger(message.ItemDic[key[i]]) && !(message.ItemDic[key[i]] && $util.isInteger(message.ItemDic[key[i]].low) && $util.isInteger(message.ItemDic[key[i]].high)))
@@ -4608,12 +4608,12 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.ReqAddItem();
+            let message = new $root.Bag.ReqAddItem();
             if (object.ItemDic) {
                 if (!$util.isObject(object.ItemDic))
                     throw TypeError(".Bag.ReqAddItem.ItemDic: object expected");
                 message.ItemDic = {};
-                for (var keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
+                for (let keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
                     if (keys[i] === "__proto__")
                         $util.makeProp(message.ItemDic, keys[i]);
                     if ($util.Long)
@@ -4645,13 +4645,13 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.objects || options.defaults)
                 object.ItemDic = {};
-            var keys2;
+            let keys2;
             if (message.ItemDic && (keys2 = Object.keys(message.ItemDic)).length) {
                 object.ItemDic = {};
-                for (var j = 0; j < keys2.length; ++j) {
+                for (let j = 0; j < keys2.length; ++j) {
                     if (keys2[j] === "__proto__")
                         $util.makeProp(object.ItemDic, keys2[j]);
                     if (typeof BigInt !== "undefined" && options.longs === BigInt)
@@ -4714,7 +4714,7 @@ $root.Bag = (function() {
         function RespAddItem(properties) {
             this.ItemDic = {};
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -4756,7 +4756,7 @@ $root.Bag = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic"))
-                for (var keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
                     writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 0 =*/8).int32(keys[i]).uint32(/* id 2, wireType 0 =*/16).int64(message.ItemDic[keys[i]]).ldelim();
             return writer;
         };
@@ -4792,7 +4792,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message, key, value;
+            let end, message, key, value;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -4804,21 +4804,21 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.RespAddItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
                 case 1: {
                         if (message.ItemDic === $util.emptyObject)
                             message.ItemDic = {};
-                        var end2 = reader.uint32() + reader.pos;
+                        let end2 = reader.uint32() + reader.pos;
                         if (end2 > reader.len)
                             throw RangeError("index out of range");
                         reader.len = end2;
                         key = 0;
                         value = 0;
                         while (reader.pos < end2) {
-                            var tag2 = reader.uint32();
+                            let tag2 = reader.uint32();
                             switch (tag2 >>> 3) {
                             case 1:
                                 key = reader.int32();
@@ -4884,8 +4884,8 @@ $root.Bag = (function() {
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic")) {
                 if (!$util.isObject(message.ItemDic))
                     return "ItemDic: object expected";
-                var key = Object.keys(message.ItemDic);
-                for (var i = 0; i < key.length; ++i) {
+                let key = Object.keys(message.ItemDic);
+                for (let i = 0; i < key.length; ++i) {
                     if (!$util.key32Re.test(key[i]))
                         return "ItemDic: integer key{k:int32} expected";
                     if (!$util.isInteger(message.ItemDic[key[i]]) && !(message.ItemDic[key[i]] && $util.isInteger(message.ItemDic[key[i]].low) && $util.isInteger(message.ItemDic[key[i]].high)))
@@ -4912,12 +4912,12 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.RespAddItem();
+            let message = new $root.Bag.RespAddItem();
             if (object.ItemDic) {
                 if (!$util.isObject(object.ItemDic))
                     throw TypeError(".Bag.RespAddItem.ItemDic: object expected");
                 message.ItemDic = {};
-                for (var keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
+                for (let keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
                     if (keys[i] === "__proto__")
                         $util.makeProp(message.ItemDic, keys[i]);
                     if ($util.Long)
@@ -4949,13 +4949,13 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.objects || options.defaults)
                 object.ItemDic = {};
-            var keys2;
+            let keys2;
             if (message.ItemDic && (keys2 = Object.keys(message.ItemDic)).length) {
                 object.ItemDic = {};
-                for (var j = 0; j < keys2.length; ++j) {
+                for (let j = 0; j < keys2.length; ++j) {
                     if (keys2[j] === "__proto__")
                         $util.makeProp(object.ItemDic, keys2[j]);
                     if (typeof BigInt !== "undefined" && options.longs === BigInt)
@@ -5018,7 +5018,7 @@ $root.Bag = (function() {
         function ReqRemoveItem(properties) {
             this.ItemDic = {};
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -5060,7 +5060,7 @@ $root.Bag = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic"))
-                for (var keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
                     writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 0 =*/8).int32(keys[i]).uint32(/* id 2, wireType 0 =*/16).int64(message.ItemDic[keys[i]]).ldelim();
             return writer;
         };
@@ -5096,7 +5096,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message, key, value;
+            let end, message, key, value;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -5108,21 +5108,21 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.ReqRemoveItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
                 case 1: {
                         if (message.ItemDic === $util.emptyObject)
                             message.ItemDic = {};
-                        var end2 = reader.uint32() + reader.pos;
+                        let end2 = reader.uint32() + reader.pos;
                         if (end2 > reader.len)
                             throw RangeError("index out of range");
                         reader.len = end2;
                         key = 0;
                         value = 0;
                         while (reader.pos < end2) {
-                            var tag2 = reader.uint32();
+                            let tag2 = reader.uint32();
                             switch (tag2 >>> 3) {
                             case 1:
                                 key = reader.int32();
@@ -5188,8 +5188,8 @@ $root.Bag = (function() {
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic")) {
                 if (!$util.isObject(message.ItemDic))
                     return "ItemDic: object expected";
-                var key = Object.keys(message.ItemDic);
-                for (var i = 0; i < key.length; ++i) {
+                let key = Object.keys(message.ItemDic);
+                for (let i = 0; i < key.length; ++i) {
                     if (!$util.key32Re.test(key[i]))
                         return "ItemDic: integer key{k:int32} expected";
                     if (!$util.isInteger(message.ItemDic[key[i]]) && !(message.ItemDic[key[i]] && $util.isInteger(message.ItemDic[key[i]].low) && $util.isInteger(message.ItemDic[key[i]].high)))
@@ -5216,12 +5216,12 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.ReqRemoveItem();
+            let message = new $root.Bag.ReqRemoveItem();
             if (object.ItemDic) {
                 if (!$util.isObject(object.ItemDic))
                     throw TypeError(".Bag.ReqRemoveItem.ItemDic: object expected");
                 message.ItemDic = {};
-                for (var keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
+                for (let keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
                     if (keys[i] === "__proto__")
                         $util.makeProp(message.ItemDic, keys[i]);
                     if ($util.Long)
@@ -5253,13 +5253,13 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.objects || options.defaults)
                 object.ItemDic = {};
-            var keys2;
+            let keys2;
             if (message.ItemDic && (keys2 = Object.keys(message.ItemDic)).length) {
                 object.ItemDic = {};
-                for (var j = 0; j < keys2.length; ++j) {
+                for (let j = 0; j < keys2.length; ++j) {
                     if (keys2[j] === "__proto__")
                         $util.makeProp(object.ItemDic, keys2[j]);
                     if (typeof BigInt !== "undefined" && options.longs === BigInt)
@@ -5322,7 +5322,7 @@ $root.Bag = (function() {
         function RespRemoveItem(properties) {
             this.ItemDic = {};
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -5364,7 +5364,7 @@ $root.Bag = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic"))
-                for (var keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(message.ItemDic), i = 0; i < keys.length; ++i)
                     writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 0 =*/8).int32(keys[i]).uint32(/* id 2, wireType 0 =*/16).int64(message.ItemDic[keys[i]]).ldelim();
             return writer;
         };
@@ -5400,7 +5400,7 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message, key, value;
+            let end, message, key, value;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -5412,21 +5412,21 @@ $root.Bag = (function() {
             }
             message = new $root.Bag.RespRemoveItem();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
                 case 1: {
                         if (message.ItemDic === $util.emptyObject)
                             message.ItemDic = {};
-                        var end2 = reader.uint32() + reader.pos;
+                        let end2 = reader.uint32() + reader.pos;
                         if (end2 > reader.len)
                             throw RangeError("index out of range");
                         reader.len = end2;
                         key = 0;
                         value = 0;
                         while (reader.pos < end2) {
-                            var tag2 = reader.uint32();
+                            let tag2 = reader.uint32();
                             switch (tag2 >>> 3) {
                             case 1:
                                 key = reader.int32();
@@ -5492,8 +5492,8 @@ $root.Bag = (function() {
             if (message.ItemDic != null && Object.hasOwnProperty.call(message, "ItemDic")) {
                 if (!$util.isObject(message.ItemDic))
                     return "ItemDic: object expected";
-                var key = Object.keys(message.ItemDic);
-                for (var i = 0; i < key.length; ++i) {
+                let key = Object.keys(message.ItemDic);
+                for (let i = 0; i < key.length; ++i) {
                     if (!$util.key32Re.test(key[i]))
                         return "ItemDic: integer key{k:int32} expected";
                     if (!$util.isInteger(message.ItemDic[key[i]]) && !(message.ItemDic[key[i]] && $util.isInteger(message.ItemDic[key[i]].low) && $util.isInteger(message.ItemDic[key[i]].high)))
@@ -5520,12 +5520,12 @@ $root.Bag = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Bag.RespRemoveItem();
+            let message = new $root.Bag.RespRemoveItem();
             if (object.ItemDic) {
                 if (!$util.isObject(object.ItemDic))
                     throw TypeError(".Bag.RespRemoveItem.ItemDic: object expected");
                 message.ItemDic = {};
-                for (var keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
+                for (let keys = Object.keys(object.ItemDic), i = 0; i < keys.length; ++i) {
                     if (keys[i] === "__proto__")
                         $util.makeProp(message.ItemDic, keys[i]);
                     if ($util.Long)
@@ -5557,13 +5557,13 @@ $root.Bag = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.objects || options.defaults)
                 object.ItemDic = {};
-            var keys2;
+            let keys2;
             if (message.ItemDic && (keys2 = Object.keys(message.ItemDic)).length) {
                 object.ItemDic = {};
-                for (var j = 0; j < keys2.length; ++j) {
+                for (let j = 0; j < keys2.length; ++j) {
                     if (keys2[j] === "__proto__")
                         $util.makeProp(object.ItemDic, keys2[j]);
                     if (typeof BigInt !== "undefined" && options.longs === BigInt)
@@ -5609,14 +5609,14 @@ $root.Bag = (function() {
     return Bag;
 })();
 
-$root.Social = (function() {
+export const Social = $root.Social = (() => {
 
     /**
      * Namespace Social.
      * @exports Social
      * @namespace
      */
-    var Social = {};
+    const Social = {};
 
     Social.FriendInfo = (function() {
 
@@ -5638,7 +5638,7 @@ $root.Social = (function() {
          */
         function FriendInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -5725,7 +5725,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -5737,7 +5737,7 @@ $root.Social = (function() {
             }
             message = new $root.Social.FriendInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -5819,7 +5819,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Social.FriendInfo();
+            let message = new $root.Social.FriendInfo();
             if (object.PlayerId != null)
                 if ($util.Long)
                     message.PlayerId = $util.Long.fromValue(object.PlayerId, false);
@@ -5850,10 +5850,10 @@ $root.Social = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.PlayerId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.PlayerId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -5918,7 +5918,7 @@ $root.Social = (function() {
          */
         function ReqSocialInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -5985,7 +5985,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -5997,7 +5997,7 @@ $root.Social = (function() {
             }
             message = new $root.Social.ReqSocialInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -6122,7 +6122,7 @@ $root.Social = (function() {
          */
         function RespSocialInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -6189,7 +6189,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -6201,7 +6201,7 @@ $root.Social = (function() {
             }
             message = new $root.Social.RespSocialInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -6327,7 +6327,7 @@ $root.Social = (function() {
          */
         function ReqDeleteFriend(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -6404,7 +6404,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -6416,7 +6416,7 @@ $root.Social = (function() {
             }
             message = new $root.Social.ReqDeleteFriend();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -6491,7 +6491,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Social.ReqDeleteFriend();
+            let message = new $root.Social.ReqDeleteFriend();
             if (object.PlayerId != null)
                 if ($util.Long)
                     message.PlayerId = $util.Long.fromValue(object.PlayerId, false);
@@ -6520,10 +6520,10 @@ $root.Social = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.PlayerId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.PlayerId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -6585,7 +6585,7 @@ $root.Social = (function() {
          */
         function RespDeleteFriend(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -6662,7 +6662,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -6674,7 +6674,7 @@ $root.Social = (function() {
             }
             message = new $root.Social.RespDeleteFriend();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -6749,7 +6749,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Social.RespDeleteFriend();
+            let message = new $root.Social.RespDeleteFriend();
             if (object.Success != null)
                 message.Success = Boolean(object.Success);
             return message;
@@ -6771,7 +6771,7 @@ $root.Social = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.Success = false;
             if (message.Success != null && Object.hasOwnProperty.call(message, "Success"))
@@ -6826,7 +6826,7 @@ $root.Social = (function() {
          */
         function ReqFriendList(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -6893,7 +6893,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -6905,7 +6905,7 @@ $root.Social = (function() {
             }
             message = new $root.Social.ReqFriendList();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -7032,7 +7032,7 @@ $root.Social = (function() {
         function RespFriendList(properties) {
             this.Friends = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -7074,7 +7074,7 @@ $root.Social = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.Friends != null && message.Friends.length)
-                for (var i = 0; i < message.Friends.length; ++i)
+                for (let i = 0; i < message.Friends.length; ++i)
                     $root.Social.FriendInfo.encode(message.Friends[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), q + 1).ldelim();
             return writer;
         };
@@ -7110,7 +7110,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -7122,7 +7122,7 @@ $root.Social = (function() {
             }
             message = new $root.Social.RespFriendList();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -7179,8 +7179,8 @@ $root.Social = (function() {
             if (message.Friends != null && Object.hasOwnProperty.call(message, "Friends")) {
                 if (!Array.isArray(message.Friends))
                     return "Friends: array expected";
-                for (var i = 0; i < message.Friends.length; ++i) {
-                    var error = $root.Social.FriendInfo.verify(message.Friends[i], long + 1);
+                for (let i = 0; i < message.Friends.length; ++i) {
+                    let error = $root.Social.FriendInfo.verify(message.Friends[i], long + 1);
                     if (error)
                         return "Friends." + error;
                 }
@@ -7205,12 +7205,12 @@ $root.Social = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Social.RespFriendList();
+            let message = new $root.Social.RespFriendList();
             if (object.Friends) {
                 if (!Array.isArray(object.Friends))
                     throw TypeError(".Social.RespFriendList.Friends: array expected");
                 message.Friends = [];
-                for (var i = 0; i < object.Friends.length; ++i) {
+                for (let i = 0; i < object.Friends.length; ++i) {
                     if (!$util.isObject(object.Friends[i]))
                         throw TypeError(".Social.RespFriendList.Friends: object expected");
                     message.Friends[i] = $root.Social.FriendInfo.fromObject(object.Friends[i], long + 1);
@@ -7235,12 +7235,12 @@ $root.Social = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.arrays || options.defaults)
                 object.Friends = [];
             if (message.Friends && message.Friends.length) {
                 object.Friends = [];
-                for (var j = 0; j < message.Friends.length; ++j)
+                for (let j = 0; j < message.Friends.length; ++j)
                     object.Friends[j] = $root.Social.FriendInfo.toObject(message.Friends[j], options, q + 1);
             }
             return object;
@@ -7294,7 +7294,7 @@ $root.Social = (function() {
          */
         function ReqFriendByAdd(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -7371,7 +7371,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -7383,7 +7383,7 @@ $root.Social = (function() {
             }
             message = new $root.Social.ReqFriendByAdd();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -7458,7 +7458,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Social.ReqFriendByAdd();
+            let message = new $root.Social.ReqFriendByAdd();
             if (object.PlayerId != null)
                 if ($util.Long)
                     message.PlayerId = $util.Long.fromValue(object.PlayerId, false);
@@ -7487,10 +7487,10 @@ $root.Social = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.PlayerId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.PlayerId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -7552,7 +7552,7 @@ $root.Social = (function() {
          */
         function RespFriendByAdd(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -7629,7 +7629,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -7641,7 +7641,7 @@ $root.Social = (function() {
             }
             message = new $root.Social.RespFriendByAdd();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -7716,7 +7716,7 @@ $root.Social = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Social.RespFriendByAdd();
+            let message = new $root.Social.RespFriendByAdd();
             if (object.Success != null)
                 message.Success = Boolean(object.Success);
             return message;
@@ -7738,7 +7738,7 @@ $root.Social = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.Success = false;
             if (message.Success != null && Object.hasOwnProperty.call(message, "Success"))
@@ -7778,14 +7778,14 @@ $root.Social = (function() {
     return Social;
 })();
 
-$root.User = (function() {
+export const User = $root.User = (() => {
 
     /**
      * Namespace User.
      * @exports User
      * @namespace
      */
-    var User = {};
+    const User = {};
 
     User.ReqLogin = (function() {
 
@@ -7811,7 +7811,7 @@ $root.User = (function() {
          */
         function ReqLogin(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -7938,7 +7938,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -7950,7 +7950,7 @@ $root.User = (function() {
             }
             message = new $root.User.ReqLogin();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -8060,7 +8060,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.ReqLogin();
+            let message = new $root.User.ReqLogin();
             if (object.UserName != null)
                 message.UserName = String(object.UserName);
             if (object.Platform != null)
@@ -8092,7 +8092,7 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.UserName = "";
                 object.Platform = "";
@@ -8168,7 +8168,7 @@ $root.User = (function() {
          */
         function RespLogin(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -8285,7 +8285,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -8297,7 +8297,7 @@ $root.User = (function() {
             }
             message = new $root.User.RespLogin();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -8400,7 +8400,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.RespLogin();
+            let message = new $root.User.RespLogin();
             if (object.Code != null)
                 message.Code = object.Code | 0;
             if (object.RoleName != null)
@@ -8444,18 +8444,18 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.Code = 0;
                 object.RoleName = "";
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Id = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Id = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 object.Level = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.CreateTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.CreateTime = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -8532,7 +8532,7 @@ $root.User = (function() {
          */
         function ReqPlayerCreate(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -8619,7 +8619,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -8631,7 +8631,7 @@ $root.User = (function() {
             }
             message = new $root.User.ReqPlayerCreate();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -8713,7 +8713,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.ReqPlayerCreate();
+            let message = new $root.User.ReqPlayerCreate();
             if (object.Id != null)
                 if ($util.Long)
                     message.Id = $util.Long.fromValue(object.Id, false);
@@ -8744,10 +8744,10 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Id = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Id = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -8813,7 +8813,7 @@ $root.User = (function() {
          */
         function RespPlayerCreate(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -8890,7 +8890,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -8902,7 +8902,7 @@ $root.User = (function() {
             }
             message = new $root.User.RespPlayerCreate();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -8955,7 +8955,7 @@ $root.User = (function() {
             if (long > $util.recursionLimit)
                 return "maximum nesting depth exceeded";
             if (message.PlayerInfo != null && Object.hasOwnProperty.call(message, "PlayerInfo")) {
-                var error = $root.User.PlayerInfo.verify(message.PlayerInfo, long + 1);
+                let error = $root.User.PlayerInfo.verify(message.PlayerInfo, long + 1);
                 if (error)
                     return "PlayerInfo." + error;
             }
@@ -8979,7 +8979,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.RespPlayerCreate();
+            let message = new $root.User.RespPlayerCreate();
             if (object.PlayerInfo != null) {
                 if (!$util.isObject(object.PlayerInfo))
                     throw TypeError(".User.RespPlayerCreate.PlayerInfo: object expected");
@@ -9004,7 +9004,7 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.PlayerInfo = null;
             if (message.PlayerInfo != null && Object.hasOwnProperty.call(message, "PlayerInfo"))
@@ -9060,7 +9060,7 @@ $root.User = (function() {
          */
         function ReqPlayerList(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -9137,7 +9137,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -9149,7 +9149,7 @@ $root.User = (function() {
             }
             message = new $root.User.ReqPlayerList();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -9224,7 +9224,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.ReqPlayerList();
+            let message = new $root.User.ReqPlayerList();
             if (object.Id != null)
                 if ($util.Long)
                     message.Id = $util.Long.fromValue(object.Id, false);
@@ -9253,10 +9253,10 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Id = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Id = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -9319,7 +9319,7 @@ $root.User = (function() {
         function RespPlayerList(properties) {
             this.PlayerList = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -9361,7 +9361,7 @@ $root.User = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.PlayerList != null && message.PlayerList.length)
-                for (var i = 0; i < message.PlayerList.length; ++i)
+                for (let i = 0; i < message.PlayerList.length; ++i)
                     $root.User.PlayerInfo.encode(message.PlayerList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), q + 1).ldelim();
             return writer;
         };
@@ -9397,7 +9397,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -9409,7 +9409,7 @@ $root.User = (function() {
             }
             message = new $root.User.RespPlayerList();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -9466,8 +9466,8 @@ $root.User = (function() {
             if (message.PlayerList != null && Object.hasOwnProperty.call(message, "PlayerList")) {
                 if (!Array.isArray(message.PlayerList))
                     return "PlayerList: array expected";
-                for (var i = 0; i < message.PlayerList.length; ++i) {
-                    var error = $root.User.PlayerInfo.verify(message.PlayerList[i], long + 1);
+                for (let i = 0; i < message.PlayerList.length; ++i) {
+                    let error = $root.User.PlayerInfo.verify(message.PlayerList[i], long + 1);
                     if (error)
                         return "PlayerList." + error;
                 }
@@ -9492,12 +9492,12 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.RespPlayerList();
+            let message = new $root.User.RespPlayerList();
             if (object.PlayerList) {
                 if (!Array.isArray(object.PlayerList))
                     throw TypeError(".User.RespPlayerList.PlayerList: array expected");
                 message.PlayerList = [];
-                for (var i = 0; i < object.PlayerList.length; ++i) {
+                for (let i = 0; i < object.PlayerList.length; ++i) {
                     if (!$util.isObject(object.PlayerList[i]))
                         throw TypeError(".User.RespPlayerList.PlayerList: object expected");
                     message.PlayerList[i] = $root.User.PlayerInfo.fromObject(object.PlayerList[i], long + 1);
@@ -9522,12 +9522,12 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.arrays || options.defaults)
                 object.PlayerList = [];
             if (message.PlayerList && message.PlayerList.length) {
                 object.PlayerList = [];
-                for (var j = 0; j < message.PlayerList.length; ++j)
+                for (let j = 0; j < message.PlayerList.length; ++j)
                     object.PlayerList[j] = $root.User.PlayerInfo.toObject(message.PlayerList[j], options, q + 1);
             }
             return object;
@@ -9586,7 +9586,7 @@ $root.User = (function() {
          */
         function PlayerInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -9713,7 +9713,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -9725,7 +9725,7 @@ $root.User = (function() {
             }
             message = new $root.User.PlayerInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -9835,7 +9835,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.PlayerInfo();
+            let message = new $root.User.PlayerInfo();
             if (object.Id != null)
                 if ($util.Long)
                     message.Id = $util.Long.fromValue(object.Id, false);
@@ -9881,10 +9881,10 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Id = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Id = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -9893,7 +9893,7 @@ $root.User = (function() {
                 object.State = 0;
                 object.Avatar = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, true);
+                    let long = new $util.Long(0, 0, true);
                     object.CurrentExp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.CurrentExp = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -9971,7 +9971,7 @@ $root.User = (function() {
          */
         function ReqPlayerLogin(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -10048,7 +10048,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -10060,7 +10060,7 @@ $root.User = (function() {
             }
             message = new $root.User.ReqPlayerLogin();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -10135,7 +10135,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.ReqPlayerLogin();
+            let message = new $root.User.ReqPlayerLogin();
             if (object.Id != null)
                 if ($util.Long)
                     message.Id = $util.Long.fromValue(object.Id, false);
@@ -10164,10 +10164,10 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Id = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Id = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -10231,7 +10231,7 @@ $root.User = (function() {
          */
         function RespPlayerLogin(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -10328,7 +10328,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -10340,7 +10340,7 @@ $root.User = (function() {
             }
             message = new $root.User.RespPlayerLogin();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -10407,7 +10407,7 @@ $root.User = (function() {
                 if (!$util.isInteger(message.CreateTime) && !(message.CreateTime && $util.isInteger(message.CreateTime.low) && $util.isInteger(message.CreateTime.high)))
                     return "CreateTime: integer|Long expected";
             if (message.PlayerInfo != null && Object.hasOwnProperty.call(message, "PlayerInfo")) {
-                var error = $root.User.PlayerInfo.verify(message.PlayerInfo, long + 1);
+                let error = $root.User.PlayerInfo.verify(message.PlayerInfo, long + 1);
                 if (error)
                     return "PlayerInfo." + error;
             }
@@ -10431,7 +10431,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.RespPlayerLogin();
+            let message = new $root.User.RespPlayerLogin();
             if (object.Code != null)
                 message.Code = object.Code | 0;
             if (object.CreateTime != null)
@@ -10467,11 +10467,11 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.Code = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.CreateTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.CreateTime = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -10540,7 +10540,7 @@ $root.User = (function() {
          */
         function RespErrorCode(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -10627,7 +10627,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -10639,7 +10639,7 @@ $root.User = (function() {
             }
             message = new $root.User.RespErrorCode();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -10721,7 +10721,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.RespErrorCode();
+            let message = new $root.User.RespErrorCode();
             if (object.ErrCode != null)
                 if ($util.Long)
                     message.ErrCode = $util.Long.fromValue(object.ErrCode, false);
@@ -10752,10 +10752,10 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.ErrCode = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.ErrCode = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -10822,7 +10822,7 @@ $root.User = (function() {
          */
         function RespPrompt(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -10909,7 +10909,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -10921,7 +10921,7 @@ $root.User = (function() {
             }
             message = new $root.User.RespPrompt();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -11003,7 +11003,7 @@ $root.User = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.User.RespPrompt();
+            let message = new $root.User.RespPrompt();
             if (object.Type != null)
                 message.Type = object.Type | 0;
             if (object.Content != null)
@@ -11027,7 +11027,7 @@ $root.User = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.Type = 0;
                 object.Content = "";
@@ -11071,14 +11071,14 @@ $root.User = (function() {
     return User;
 })();
 
-$root.Attribute = (function() {
+export const Attribute = $root.Attribute = (() => {
 
     /**
      * Namespace Attribute.
      * @exports Attribute
      * @namespace
      */
-    var Attribute = {};
+    const Attribute = {};
 
     Attribute.PlayerAttributeEntry = (function() {
 
@@ -11103,7 +11103,7 @@ $root.Attribute = (function() {
          */
         function PlayerAttributeEntry(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -11220,7 +11220,7 @@ $root.Attribute = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -11232,7 +11232,7 @@ $root.Attribute = (function() {
             }
             message = new $root.Attribute.PlayerAttributeEntry();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -11335,7 +11335,7 @@ $root.Attribute = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Attribute.PlayerAttributeEntry();
+            let message = new $root.Attribute.PlayerAttributeEntry();
             if (object.Type != null)
                 message.Type = object.Type | 0;
             if (object.Value != null)
@@ -11393,26 +11393,26 @@ $root.Attribute = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.Type = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Value = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Value = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Base = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Base = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Add = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Add = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Pct = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Pct = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -11499,7 +11499,7 @@ $root.Attribute = (function() {
         function NotifyPlayerAttributeSync(properties) {
             this.Attributes = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -11541,7 +11541,7 @@ $root.Attribute = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.Attributes != null && message.Attributes.length)
-                for (var i = 0; i < message.Attributes.length; ++i)
+                for (let i = 0; i < message.Attributes.length; ++i)
                     $root.Attribute.PlayerAttributeEntry.encode(message.Attributes[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), q + 1).ldelim();
             return writer;
         };
@@ -11577,7 +11577,7 @@ $root.Attribute = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -11589,7 +11589,7 @@ $root.Attribute = (function() {
             }
             message = new $root.Attribute.NotifyPlayerAttributeSync();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -11646,8 +11646,8 @@ $root.Attribute = (function() {
             if (message.Attributes != null && Object.hasOwnProperty.call(message, "Attributes")) {
                 if (!Array.isArray(message.Attributes))
                     return "Attributes: array expected";
-                for (var i = 0; i < message.Attributes.length; ++i) {
-                    var error = $root.Attribute.PlayerAttributeEntry.verify(message.Attributes[i], long + 1);
+                for (let i = 0; i < message.Attributes.length; ++i) {
+                    let error = $root.Attribute.PlayerAttributeEntry.verify(message.Attributes[i], long + 1);
                     if (error)
                         return "Attributes." + error;
                 }
@@ -11672,12 +11672,12 @@ $root.Attribute = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Attribute.NotifyPlayerAttributeSync();
+            let message = new $root.Attribute.NotifyPlayerAttributeSync();
             if (object.Attributes) {
                 if (!Array.isArray(object.Attributes))
                     throw TypeError(".Attribute.NotifyPlayerAttributeSync.Attributes: array expected");
                 message.Attributes = [];
-                for (var i = 0; i < object.Attributes.length; ++i) {
+                for (let i = 0; i < object.Attributes.length; ++i) {
                     if (!$util.isObject(object.Attributes[i]))
                         throw TypeError(".Attribute.NotifyPlayerAttributeSync.Attributes: object expected");
                     message.Attributes[i] = $root.Attribute.PlayerAttributeEntry.fromObject(object.Attributes[i], long + 1);
@@ -11702,12 +11702,12 @@ $root.Attribute = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.arrays || options.defaults)
                 object.Attributes = [];
             if (message.Attributes && message.Attributes.length) {
                 object.Attributes = [];
-                for (var j = 0; j < message.Attributes.length; ++j)
+                for (let j = 0; j < message.Attributes.length; ++j)
                     object.Attributes[j] = $root.Attribute.PlayerAttributeEntry.toObject(message.Attributes[j], options, q + 1);
             }
             return object;
@@ -11762,7 +11762,7 @@ $root.Attribute = (function() {
          */
         function NotifyPlayerAttributeChanged(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -11849,7 +11849,7 @@ $root.Attribute = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -11861,7 +11861,7 @@ $root.Attribute = (function() {
             }
             message = new $root.Attribute.NotifyPlayerAttributeChanged();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -11943,7 +11943,7 @@ $root.Attribute = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Attribute.NotifyPlayerAttributeChanged();
+            let message = new $root.Attribute.NotifyPlayerAttributeChanged();
             if (object.Type != null)
                 message.Type = object.Type | 0;
             if (object.Value != null)
@@ -11974,11 +11974,11 @@ $root.Attribute = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.Type = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Value = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Value = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -12027,14 +12027,14 @@ $root.Attribute = (function() {
     return Attribute;
 })();
 
-$root.Room = (function() {
+export const Room = $root.Room = (() => {
 
     /**
      * Namespace Room.
      * @exports Room
      * @namespace
      */
-    var Room = {};
+    const Room = {};
 
     /**
      * GameType enum.
@@ -12044,7 +12044,7 @@ $root.Room = (function() {
      * @property {number} RockPaperScissors=1 RockPaperScissors value
      */
     Room.GameType = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
+        const valuesById = {}, values = Object.create(valuesById);
         values[valuesById[0] = "None"] = 0;
         values[valuesById[1] = "RockPaperScissors"] = 1;
         return values;
@@ -12064,7 +12064,7 @@ $root.Room = (function() {
      * @property {number} Disbanded=7 Disbanded value
      */
     Room.RoomStatus = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
+        const valuesById = {}, values = Object.create(valuesById);
         values[valuesById[0] = "None"] = 0;
         values[valuesById[1] = "Waiting"] = 1;
         values[valuesById[2] = "Ready"] = 2;
@@ -12091,7 +12091,7 @@ $root.Room = (function() {
      * @property {number} Reset=8 Reset value
      */
     Room.RoomChangeType = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
+        const valuesById = {}, values = Object.create(valuesById);
         values[valuesById[0] = "Created"] = 0;
         values[valuesById[1] = "Joined"] = 1;
         values[valuesById[2] = "Left"] = 2;
@@ -12114,7 +12114,7 @@ $root.Room = (function() {
      * @property {number} Offline=3 Offline value
      */
     Room.RoomPlayerOnlineStatus = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
+        const valuesById = {}, values = Object.create(valuesById);
         values[valuesById[0] = "OnlineUnknown"] = 0;
         values[valuesById[1] = "Online"] = 1;
         values[valuesById[2] = "Reconnecting"] = 2;
@@ -12135,7 +12135,7 @@ $root.Room = (function() {
      * @property {number} SettledInRoom=6 SettledInRoom value
      */
     Room.RoomPlayerStatus = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
+        const valuesById = {}, values = Object.create(valuesById);
         values[valuesById[0] = "PlayerStatusNone"] = 0;
         values[valuesById[1] = "Idle"] = 1;
         values[valuesById[2] = "ReadyInRoom"] = 2;
@@ -12171,7 +12171,7 @@ $root.Room = (function() {
          */
         function RoomPlayerInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -12308,7 +12308,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -12320,7 +12320,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.RoomPlayerInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -12454,7 +12454,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.RoomPlayerInfo();
+            let message = new $root.Room.RoomPlayerInfo();
             if (object.RoleId != null)
                 if ($util.Long)
                     message.RoleId = $util.Long.fromValue(object.RoleId, false);
@@ -12551,10 +12551,10 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.RoleId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.RoleId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -12647,7 +12647,7 @@ $root.Room = (function() {
         function RoomInfo(properties) {
             this.Players = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -12793,7 +12793,7 @@ $root.Room = (function() {
             if (message.OwnerRoleId != null && Object.hasOwnProperty.call(message, "OwnerRoleId"))
                 writer.uint32(/* id 8, wireType 0 =*/64).int64(message.OwnerRoleId);
             if (message.Players != null && message.Players.length)
-                for (var i = 0; i < message.Players.length; ++i)
+                for (let i = 0; i < message.Players.length; ++i)
                     $root.Room.RoomPlayerInfo.encode(message.Players[i], writer.uint32(/* id 9, wireType 2 =*/74).fork(), q + 1).ldelim();
             if (message.Round != null && Object.hasOwnProperty.call(message, "Round"))
                 writer.uint32(/* id 10, wireType 0 =*/80).int32(message.Round);
@@ -12835,7 +12835,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -12847,7 +12847,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.RoomInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -12988,8 +12988,8 @@ $root.Room = (function() {
             if (message.Players != null && Object.hasOwnProperty.call(message, "Players")) {
                 if (!Array.isArray(message.Players))
                     return "Players: array expected";
-                for (var i = 0; i < message.Players.length; ++i) {
-                    var error = $root.Room.RoomPlayerInfo.verify(message.Players[i], long + 1);
+                for (let i = 0; i < message.Players.length; ++i) {
+                    let error = $root.Room.RoomPlayerInfo.verify(message.Players[i], long + 1);
                     if (error)
                         return "Players." + error;
                 }
@@ -13023,7 +13023,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.RoomInfo();
+            let message = new $root.Room.RoomInfo();
             if (object.RoomId != null)
                 if ($util.Long)
                     message.RoomId = $util.Long.fromValue(object.RoomId, false);
@@ -13110,7 +13110,7 @@ $root.Room = (function() {
                 if (!Array.isArray(object.Players))
                     throw TypeError(".Room.RoomInfo.Players: array expected");
                 message.Players = [];
-                for (var i = 0; i < object.Players.length; ++i) {
+                for (let i = 0; i < object.Players.length; ++i) {
                     if (!$util.isObject(object.Players[i]))
                         throw TypeError(".Room.RoomInfo.Players: object expected");
                     message.Players[i] = $root.Room.RoomPlayerInfo.fromObject(object.Players[i], long + 1);
@@ -13155,12 +13155,12 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.arrays || options.defaults)
                 object.Players = [];
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.RoomId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.RoomId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -13171,18 +13171,18 @@ $root.Room = (function() {
                 object.MinPlayerCount = 0;
                 object.MaxPlayerCount = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.OwnerRoleId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.OwnerRoleId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 object.Round = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.CreatedTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.CreatedTime = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.UpdatedTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.UpdatedTime = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -13215,7 +13215,7 @@ $root.Room = (function() {
                     object.OwnerRoleId = options.longs === String ? $util.Long.prototype.toString.call(message.OwnerRoleId) : options.longs === Number ? new $util.LongBits(message.OwnerRoleId.low >>> 0, message.OwnerRoleId.high >>> 0).toNumber() : message.OwnerRoleId;
             if (message.Players && message.Players.length) {
                 object.Players = [];
-                for (var j = 0; j < message.Players.length; ++j)
+                for (let j = 0; j < message.Players.length; ++j)
                     object.Players[j] = $root.Room.RoomPlayerInfo.toObject(message.Players[j], options, q + 1);
             }
             if (message.Round != null && Object.hasOwnProperty.call(message, "Round"))
@@ -13286,7 +13286,7 @@ $root.Room = (function() {
          */
         function ReqRoomList(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -13373,7 +13373,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -13385,7 +13385,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.ReqRoomList();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -13472,7 +13472,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.ReqRoomList();
+            let message = new $root.Room.ReqRoomList();
             switch (object.GameType) {
             default:
                 if (typeof object.GameType === "number") {
@@ -13510,7 +13510,7 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.GameType = options.enums === String ? "None" : 0;
                 object.IncludeClosed = false;
@@ -13571,7 +13571,7 @@ $root.Room = (function() {
         function RespRoomList(properties) {
             this.Rooms = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -13613,7 +13613,7 @@ $root.Room = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.Rooms != null && message.Rooms.length)
-                for (var i = 0; i < message.Rooms.length; ++i)
+                for (let i = 0; i < message.Rooms.length; ++i)
                     $root.Room.RoomInfo.encode(message.Rooms[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), q + 1).ldelim();
             return writer;
         };
@@ -13649,7 +13649,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -13661,7 +13661,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.RespRoomList();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -13718,8 +13718,8 @@ $root.Room = (function() {
             if (message.Rooms != null && Object.hasOwnProperty.call(message, "Rooms")) {
                 if (!Array.isArray(message.Rooms))
                     return "Rooms: array expected";
-                for (var i = 0; i < message.Rooms.length; ++i) {
-                    var error = $root.Room.RoomInfo.verify(message.Rooms[i], long + 1);
+                for (let i = 0; i < message.Rooms.length; ++i) {
+                    let error = $root.Room.RoomInfo.verify(message.Rooms[i], long + 1);
                     if (error)
                         return "Rooms." + error;
                 }
@@ -13744,12 +13744,12 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.RespRoomList();
+            let message = new $root.Room.RespRoomList();
             if (object.Rooms) {
                 if (!Array.isArray(object.Rooms))
                     throw TypeError(".Room.RespRoomList.Rooms: array expected");
                 message.Rooms = [];
-                for (var i = 0; i < object.Rooms.length; ++i) {
+                for (let i = 0; i < object.Rooms.length; ++i) {
                     if (!$util.isObject(object.Rooms[i]))
                         throw TypeError(".Room.RespRoomList.Rooms: object expected");
                     message.Rooms[i] = $root.Room.RoomInfo.fromObject(object.Rooms[i], long + 1);
@@ -13774,12 +13774,12 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.arrays || options.defaults)
                 object.Rooms = [];
             if (message.Rooms && message.Rooms.length) {
                 object.Rooms = [];
-                for (var j = 0; j < message.Rooms.length; ++j)
+                for (let j = 0; j < message.Rooms.length; ++j)
                     object.Rooms[j] = $root.Room.RoomInfo.toObject(message.Rooms[j], options, q + 1);
             }
             return object;
@@ -13836,7 +13836,7 @@ $root.Room = (function() {
          */
         function ReqCreateRoom(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -13943,7 +13943,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -13955,7 +13955,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.ReqCreateRoom();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -14056,7 +14056,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.ReqCreateRoom();
+            let message = new $root.Room.ReqCreateRoom();
             switch (object.GameType) {
             default:
                 if (typeof object.GameType === "number") {
@@ -14098,7 +14098,7 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.GameType = options.enums === String ? "None" : 0;
                 object.Name = "";
@@ -14164,7 +14164,7 @@ $root.Room = (function() {
          */
         function RespCreateRoom(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -14241,7 +14241,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -14253,7 +14253,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.RespCreateRoom();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -14306,7 +14306,7 @@ $root.Room = (function() {
             if (long > $util.recursionLimit)
                 return "maximum nesting depth exceeded";
             if (message.Room != null && Object.hasOwnProperty.call(message, "Room")) {
-                var error = $root.Room.RoomInfo.verify(message.Room, long + 1);
+                let error = $root.Room.RoomInfo.verify(message.Room, long + 1);
                 if (error)
                     return "Room." + error;
             }
@@ -14330,7 +14330,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.RespCreateRoom();
+            let message = new $root.Room.RespCreateRoom();
             if (object.Room != null) {
                 if (!$util.isObject(object.Room))
                     throw TypeError(".Room.RespCreateRoom.Room: object expected");
@@ -14355,7 +14355,7 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.Room = null;
             if (message.Room != null && Object.hasOwnProperty.call(message, "Room"))
@@ -14411,7 +14411,7 @@ $root.Room = (function() {
          */
         function ReqJoinRoom(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -14488,7 +14488,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -14500,7 +14500,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.ReqJoinRoom();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -14575,7 +14575,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.ReqJoinRoom();
+            let message = new $root.Room.ReqJoinRoom();
             if (object.RoomId != null)
                 if ($util.Long)
                     message.RoomId = $util.Long.fromValue(object.RoomId, false);
@@ -14604,10 +14604,10 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.RoomId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.RoomId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -14669,7 +14669,7 @@ $root.Room = (function() {
          */
         function RespJoinRoom(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -14746,7 +14746,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -14758,7 +14758,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.RespJoinRoom();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -14811,7 +14811,7 @@ $root.Room = (function() {
             if (long > $util.recursionLimit)
                 return "maximum nesting depth exceeded";
             if (message.Room != null && Object.hasOwnProperty.call(message, "Room")) {
-                var error = $root.Room.RoomInfo.verify(message.Room, long + 1);
+                let error = $root.Room.RoomInfo.verify(message.Room, long + 1);
                 if (error)
                     return "Room." + error;
             }
@@ -14835,7 +14835,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.RespJoinRoom();
+            let message = new $root.Room.RespJoinRoom();
             if (object.Room != null) {
                 if (!$util.isObject(object.Room))
                     throw TypeError(".Room.RespJoinRoom.Room: object expected");
@@ -14860,7 +14860,7 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.Room = null;
             if (message.Room != null && Object.hasOwnProperty.call(message, "Room"))
@@ -14916,7 +14916,7 @@ $root.Room = (function() {
          */
         function ReqLeaveRoom(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -14993,7 +14993,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -15005,7 +15005,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.ReqLeaveRoom();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -15080,7 +15080,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.ReqLeaveRoom();
+            let message = new $root.Room.ReqLeaveRoom();
             if (object.RoomId != null)
                 if ($util.Long)
                     message.RoomId = $util.Long.fromValue(object.RoomId, false);
@@ -15109,10 +15109,10 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.RoomId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.RoomId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -15174,7 +15174,7 @@ $root.Room = (function() {
          */
         function RespLeaveRoom(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -15251,7 +15251,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -15263,7 +15263,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.RespLeaveRoom();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -15316,7 +15316,7 @@ $root.Room = (function() {
             if (long > $util.recursionLimit)
                 return "maximum nesting depth exceeded";
             if (message.Room != null && Object.hasOwnProperty.call(message, "Room")) {
-                var error = $root.Room.RoomInfo.verify(message.Room, long + 1);
+                let error = $root.Room.RoomInfo.verify(message.Room, long + 1);
                 if (error)
                     return "Room." + error;
             }
@@ -15340,7 +15340,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.RespLeaveRoom();
+            let message = new $root.Room.RespLeaveRoom();
             if (object.Room != null) {
                 if (!$util.isObject(object.Room))
                     throw TypeError(".Room.RespLeaveRoom.Room: object expected");
@@ -15365,7 +15365,7 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.Room = null;
             if (message.Room != null && Object.hasOwnProperty.call(message, "Room"))
@@ -15421,7 +15421,7 @@ $root.Room = (function() {
          */
         function ReqStartRoomGame(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -15498,7 +15498,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -15510,7 +15510,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.ReqStartRoomGame();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -15585,7 +15585,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.ReqStartRoomGame();
+            let message = new $root.Room.ReqStartRoomGame();
             if (object.RoomId != null)
                 if ($util.Long)
                     message.RoomId = $util.Long.fromValue(object.RoomId, false);
@@ -15614,10 +15614,10 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.RoomId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.RoomId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -15679,7 +15679,7 @@ $root.Room = (function() {
          */
         function RespStartRoomGame(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -15756,7 +15756,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -15768,7 +15768,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.RespStartRoomGame();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -15821,7 +15821,7 @@ $root.Room = (function() {
             if (long > $util.recursionLimit)
                 return "maximum nesting depth exceeded";
             if (message.Room != null && Object.hasOwnProperty.call(message, "Room")) {
-                var error = $root.Room.RoomInfo.verify(message.Room, long + 1);
+                let error = $root.Room.RoomInfo.verify(message.Room, long + 1);
                 if (error)
                     return "Room." + error;
             }
@@ -15845,7 +15845,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.RespStartRoomGame();
+            let message = new $root.Room.RespStartRoomGame();
             if (object.Room != null) {
                 if (!$util.isObject(object.Room))
                     throw TypeError(".Room.RespStartRoomGame.Room: object expected");
@@ -15870,7 +15870,7 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.Room = null;
             if (message.Room != null && Object.hasOwnProperty.call(message, "Room"))
@@ -15927,7 +15927,7 @@ $root.Room = (function() {
          */
         function NotifyRoomChanged(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -16014,7 +16014,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -16026,7 +16026,7 @@ $root.Room = (function() {
             }
             message = new $root.Room.NotifyRoomChanged();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -16098,7 +16098,7 @@ $root.Room = (function() {
                     break;
                 }
             if (message.Room != null && Object.hasOwnProperty.call(message, "Room")) {
-                var error = $root.Room.RoomInfo.verify(message.Room, long + 1);
+                let error = $root.Room.RoomInfo.verify(message.Room, long + 1);
                 if (error)
                     return "Room." + error;
             }
@@ -16122,7 +16122,7 @@ $root.Room = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Room.NotifyRoomChanged();
+            let message = new $root.Room.NotifyRoomChanged();
             switch (object.ChangeType) {
             default:
                 if (typeof object.ChangeType === "number") {
@@ -16191,7 +16191,7 @@ $root.Room = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.ChangeType = options.enums === String ? "Created" : 0;
                 object.Room = null;
@@ -16235,14 +16235,14 @@ $root.Room = (function() {
     return Room;
 })();
 
-$root.RockPaperScissors = (function() {
+export const RockPaperScissors = $root.RockPaperScissors = (() => {
 
     /**
      * Namespace RockPaperScissors.
      * @exports RockPaperScissors
      * @namespace
      */
-    var RockPaperScissors = {};
+    const RockPaperScissors = {};
 
     /**
      * RockPaperScissorsGesture enum.
@@ -16254,7 +16254,7 @@ $root.RockPaperScissors = (function() {
      * @property {number} Paper=3 Paper value
      */
     RockPaperScissors.RockPaperScissorsGesture = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
+        const valuesById = {}, values = Object.create(valuesById);
         values[valuesById[0] = "None"] = 0;
         values[valuesById[1] = "Rock"] = 1;
         values[valuesById[2] = "Scissors"] = 2;
@@ -16283,7 +16283,7 @@ $root.RockPaperScissors = (function() {
          */
         function RockPaperScissorsPlayerInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -16380,7 +16380,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -16392,7 +16392,7 @@ $root.RockPaperScissors = (function() {
             }
             message = new $root.RockPaperScissors.RockPaperScissorsPlayerInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -16488,7 +16488,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.RockPaperScissors.RockPaperScissorsPlayerInfo();
+            let message = new $root.RockPaperScissors.RockPaperScissorsPlayerInfo();
             if (object.RoleId != null)
                 if ($util.Long)
                     message.RoleId = $util.Long.fromValue(object.RoleId, false);
@@ -16543,10 +16543,10 @@ $root.RockPaperScissors = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.RoleId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.RoleId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -16619,7 +16619,7 @@ $root.RockPaperScissors = (function() {
         function RockPaperScissorsGameInfo(properties) {
             this.Players = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -16691,7 +16691,7 @@ $root.RockPaperScissors = (function() {
             if (message.WinnerRoleId != null && Object.hasOwnProperty.call(message, "WinnerRoleId"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int64(message.WinnerRoleId);
             if (message.Players != null && message.Players.length)
-                for (var i = 0; i < message.Players.length; ++i)
+                for (let i = 0; i < message.Players.length; ++i)
                     $root.RockPaperScissors.RockPaperScissorsPlayerInfo.encode(message.Players[i], writer.uint32(/* id 4, wireType 2 =*/34).fork(), q + 1).ldelim();
             return writer;
         };
@@ -16727,7 +16727,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -16739,7 +16739,7 @@ $root.RockPaperScissors = (function() {
             }
             message = new $root.RockPaperScissors.RockPaperScissorsGameInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -16817,8 +16817,8 @@ $root.RockPaperScissors = (function() {
             if (message.Players != null && Object.hasOwnProperty.call(message, "Players")) {
                 if (!Array.isArray(message.Players))
                     return "Players: array expected";
-                for (var i = 0; i < message.Players.length; ++i) {
-                    var error = $root.RockPaperScissors.RockPaperScissorsPlayerInfo.verify(message.Players[i], long + 1);
+                for (let i = 0; i < message.Players.length; ++i) {
+                    let error = $root.RockPaperScissors.RockPaperScissorsPlayerInfo.verify(message.Players[i], long + 1);
                     if (error)
                         return "Players." + error;
                 }
@@ -16843,7 +16843,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.RockPaperScissors.RockPaperScissorsGameInfo();
+            let message = new $root.RockPaperScissors.RockPaperScissorsGameInfo();
             if (object.RoomId != null)
                 if ($util.Long)
                     message.RoomId = $util.Long.fromValue(object.RoomId, false);
@@ -16868,7 +16868,7 @@ $root.RockPaperScissors = (function() {
                 if (!Array.isArray(object.Players))
                     throw TypeError(".RockPaperScissors.RockPaperScissorsGameInfo.Players: array expected");
                 message.Players = [];
-                for (var i = 0; i < object.Players.length; ++i) {
+                for (let i = 0; i < object.Players.length; ++i) {
                     if (!$util.isObject(object.Players[i]))
                         throw TypeError(".RockPaperScissors.RockPaperScissorsGameInfo.Players: object expected");
                     message.Players[i] = $root.RockPaperScissors.RockPaperScissorsPlayerInfo.fromObject(object.Players[i], long + 1);
@@ -16893,18 +16893,18 @@ $root.RockPaperScissors = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.arrays || options.defaults)
                 object.Players = [];
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.RoomId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.RoomId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 object.Round = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.WinnerRoleId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.WinnerRoleId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -16927,7 +16927,7 @@ $root.RockPaperScissors = (function() {
                     object.WinnerRoleId = options.longs === String ? $util.Long.prototype.toString.call(message.WinnerRoleId) : options.longs === Number ? new $util.LongBits(message.WinnerRoleId.low >>> 0, message.WinnerRoleId.high >>> 0).toNumber() : message.WinnerRoleId;
             if (message.Players && message.Players.length) {
                 object.Players = [];
-                for (var j = 0; j < message.Players.length; ++j)
+                for (let j = 0; j < message.Players.length; ++j)
                     object.Players[j] = $root.RockPaperScissors.RockPaperScissorsPlayerInfo.toObject(message.Players[j], options, q + 1);
             }
             return object;
@@ -16981,7 +16981,7 @@ $root.RockPaperScissors = (function() {
          */
         function ReqRockPaperScissorsGameInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -17058,7 +17058,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -17070,7 +17070,7 @@ $root.RockPaperScissors = (function() {
             }
             message = new $root.RockPaperScissors.ReqRockPaperScissorsGameInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -17145,7 +17145,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.RockPaperScissors.ReqRockPaperScissorsGameInfo();
+            let message = new $root.RockPaperScissors.ReqRockPaperScissorsGameInfo();
             if (object.RoomId != null)
                 if ($util.Long)
                     message.RoomId = $util.Long.fromValue(object.RoomId, false);
@@ -17174,10 +17174,10 @@ $root.RockPaperScissors = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.RoomId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.RoomId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -17239,7 +17239,7 @@ $root.RockPaperScissors = (function() {
          */
         function RespRockPaperScissorsGameInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -17316,7 +17316,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -17328,7 +17328,7 @@ $root.RockPaperScissors = (function() {
             }
             message = new $root.RockPaperScissors.RespRockPaperScissorsGameInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -17381,7 +17381,7 @@ $root.RockPaperScissors = (function() {
             if (long > $util.recursionLimit)
                 return "maximum nesting depth exceeded";
             if (message.GameInfo != null && Object.hasOwnProperty.call(message, "GameInfo")) {
-                var error = $root.RockPaperScissors.RockPaperScissorsGameInfo.verify(message.GameInfo, long + 1);
+                let error = $root.RockPaperScissors.RockPaperScissorsGameInfo.verify(message.GameInfo, long + 1);
                 if (error)
                     return "GameInfo." + error;
             }
@@ -17405,7 +17405,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.RockPaperScissors.RespRockPaperScissorsGameInfo();
+            let message = new $root.RockPaperScissors.RespRockPaperScissorsGameInfo();
             if (object.GameInfo != null) {
                 if (!$util.isObject(object.GameInfo))
                     throw TypeError(".RockPaperScissors.RespRockPaperScissorsGameInfo.GameInfo: object expected");
@@ -17430,7 +17430,7 @@ $root.RockPaperScissors = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.GameInfo = null;
             if (message.GameInfo != null && Object.hasOwnProperty.call(message, "GameInfo"))
@@ -17487,7 +17487,7 @@ $root.RockPaperScissors = (function() {
          */
         function ReqSubmitRockPaperScissorsGesture(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -17574,7 +17574,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -17586,7 +17586,7 @@ $root.RockPaperScissors = (function() {
             }
             message = new $root.RockPaperScissors.ReqSubmitRockPaperScissorsGesture();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -17675,7 +17675,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.RockPaperScissors.ReqSubmitRockPaperScissorsGesture();
+            let message = new $root.RockPaperScissors.ReqSubmitRockPaperScissorsGesture();
             if (object.RoomId != null)
                 if ($util.Long)
                     message.RoomId = $util.Long.fromValue(object.RoomId, false);
@@ -17728,10 +17728,10 @@ $root.RockPaperScissors = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.RoomId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.RoomId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -17797,7 +17797,7 @@ $root.RockPaperScissors = (function() {
          */
         function RespSubmitRockPaperScissorsGesture(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -17874,7 +17874,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -17886,7 +17886,7 @@ $root.RockPaperScissors = (function() {
             }
             message = new $root.RockPaperScissors.RespSubmitRockPaperScissorsGesture();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -17939,7 +17939,7 @@ $root.RockPaperScissors = (function() {
             if (long > $util.recursionLimit)
                 return "maximum nesting depth exceeded";
             if (message.GameInfo != null && Object.hasOwnProperty.call(message, "GameInfo")) {
-                var error = $root.RockPaperScissors.RockPaperScissorsGameInfo.verify(message.GameInfo, long + 1);
+                let error = $root.RockPaperScissors.RockPaperScissorsGameInfo.verify(message.GameInfo, long + 1);
                 if (error)
                     return "GameInfo." + error;
             }
@@ -17963,7 +17963,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.RockPaperScissors.RespSubmitRockPaperScissorsGesture();
+            let message = new $root.RockPaperScissors.RespSubmitRockPaperScissorsGesture();
             if (object.GameInfo != null) {
                 if (!$util.isObject(object.GameInfo))
                     throw TypeError(".RockPaperScissors.RespSubmitRockPaperScissorsGesture.GameInfo: object expected");
@@ -17988,7 +17988,7 @@ $root.RockPaperScissors = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.GameInfo = null;
             if (message.GameInfo != null && Object.hasOwnProperty.call(message, "GameInfo"))
@@ -18044,7 +18044,7 @@ $root.RockPaperScissors = (function() {
          */
         function ReqRestartRockPaperScissorsGame(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -18121,7 +18121,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -18133,7 +18133,7 @@ $root.RockPaperScissors = (function() {
             }
             message = new $root.RockPaperScissors.ReqRestartRockPaperScissorsGame();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -18208,7 +18208,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.RockPaperScissors.ReqRestartRockPaperScissorsGame();
+            let message = new $root.RockPaperScissors.ReqRestartRockPaperScissorsGame();
             if (object.RoomId != null)
                 if ($util.Long)
                     message.RoomId = $util.Long.fromValue(object.RoomId, false);
@@ -18237,10 +18237,10 @@ $root.RockPaperScissors = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.RoomId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.RoomId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -18302,7 +18302,7 @@ $root.RockPaperScissors = (function() {
          */
         function RespRestartRockPaperScissorsGame(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -18379,7 +18379,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -18391,7 +18391,7 @@ $root.RockPaperScissors = (function() {
             }
             message = new $root.RockPaperScissors.RespRestartRockPaperScissorsGame();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -18444,7 +18444,7 @@ $root.RockPaperScissors = (function() {
             if (long > $util.recursionLimit)
                 return "maximum nesting depth exceeded";
             if (message.GameInfo != null && Object.hasOwnProperty.call(message, "GameInfo")) {
-                var error = $root.RockPaperScissors.RockPaperScissorsGameInfo.verify(message.GameInfo, long + 1);
+                let error = $root.RockPaperScissors.RockPaperScissorsGameInfo.verify(message.GameInfo, long + 1);
                 if (error)
                     return "GameInfo." + error;
             }
@@ -18468,7 +18468,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.RockPaperScissors.RespRestartRockPaperScissorsGame();
+            let message = new $root.RockPaperScissors.RespRestartRockPaperScissorsGame();
             if (object.GameInfo != null) {
                 if (!$util.isObject(object.GameInfo))
                     throw TypeError(".RockPaperScissors.RespRestartRockPaperScissorsGame.GameInfo: object expected");
@@ -18493,7 +18493,7 @@ $root.RockPaperScissors = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.GameInfo = null;
             if (message.GameInfo != null && Object.hasOwnProperty.call(message, "GameInfo"))
@@ -18549,7 +18549,7 @@ $root.RockPaperScissors = (function() {
          */
         function NotifyRockPaperScissorsGameChanged(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -18626,7 +18626,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -18638,7 +18638,7 @@ $root.RockPaperScissors = (function() {
             }
             message = new $root.RockPaperScissors.NotifyRockPaperScissorsGameChanged();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -18691,7 +18691,7 @@ $root.RockPaperScissors = (function() {
             if (long > $util.recursionLimit)
                 return "maximum nesting depth exceeded";
             if (message.GameInfo != null && Object.hasOwnProperty.call(message, "GameInfo")) {
-                var error = $root.RockPaperScissors.RockPaperScissorsGameInfo.verify(message.GameInfo, long + 1);
+                let error = $root.RockPaperScissors.RockPaperScissorsGameInfo.verify(message.GameInfo, long + 1);
                 if (error)
                     return "GameInfo." + error;
             }
@@ -18715,7 +18715,7 @@ $root.RockPaperScissors = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.RockPaperScissors.NotifyRockPaperScissorsGameChanged();
+            let message = new $root.RockPaperScissors.NotifyRockPaperScissorsGameChanged();
             if (object.GameInfo != null) {
                 if (!$util.isObject(object.GameInfo))
                     throw TypeError(".RockPaperScissors.NotifyRockPaperScissorsGameChanged.GameInfo: object expected");
@@ -18740,7 +18740,7 @@ $root.RockPaperScissors = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 object.GameInfo = null;
             if (message.GameInfo != null && Object.hasOwnProperty.call(message, "GameInfo"))
@@ -18780,14 +18780,14 @@ $root.RockPaperScissors = (function() {
     return RockPaperScissors;
 })();
 
-$root.Mail = (function() {
+export const Mail = $root.Mail = (() => {
 
     /**
      * Namespace Mail.
      * @exports Mail
      * @namespace
      */
-    var Mail = {};
+    const Mail = {};
 
     /**
      * MailErrorCode enum.
@@ -18801,7 +18801,7 @@ $root.Mail = (function() {
      * @property {number} UnclaimableAttachment=500006 UnclaimableAttachment value
      */
     Mail.MailErrorCode = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
+        const valuesById = {}, values = Object.create(valuesById);
         values[valuesById[500001] = "MailNotFound"] = 500001;
         values[valuesById[500002] = "MailAlreadyDeleted"] = 500002;
         values[valuesById[500003] = "UnclaimedAttachment"] = 500003;
@@ -18834,7 +18834,7 @@ $root.Mail = (function() {
          */
         function MailAttachmentInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -18951,7 +18951,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -18963,7 +18963,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.MailAttachmentInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -19066,7 +19066,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.MailAttachmentInfo();
+            let message = new $root.Mail.MailAttachmentInfo();
             if (object.SlotId != null)
                 message.SlotId = object.SlotId | 0;
             if (object.RewardType != null)
@@ -19103,13 +19103,13 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.SlotId = 0;
                 object.RewardType = 0;
                 object.ItemId = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Count = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -19191,7 +19191,7 @@ $root.Mail = (function() {
          */
         function MailInfo(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -19368,7 +19368,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -19380,7 +19380,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.MailInfo();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -19525,7 +19525,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.MailInfo();
+            let message = new $root.Mail.MailInfo();
             if (object.MailId != null)
                 if ($util.Long)
                     message.MailId = $util.Long.fromValue(object.MailId, false);
@@ -19602,20 +19602,20 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.MailId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.MailId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.CampaignId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.CampaignId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.CampaignVersion = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.CampaignVersion = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -19625,12 +19625,12 @@ $root.Mail = (function() {
                 object.AttachmentStatus = 0;
                 object.MailStatus = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.CreateTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.CreateTime = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.ExpireTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.ExpireTime = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -19740,7 +19740,7 @@ $root.Mail = (function() {
          */
         function MailClaimedSlot(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -19877,7 +19877,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -19889,7 +19889,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.MailClaimedSlot();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -20006,7 +20006,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.MailClaimedSlot();
+            let message = new $root.Mail.MailClaimedSlot();
             if (object.MailId != null)
                 if ($util.Long)
                     message.MailId = $util.Long.fromValue(object.MailId, false);
@@ -20054,10 +20054,10 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.MailId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.MailId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -20065,7 +20065,7 @@ $root.Mail = (function() {
                 object.RewardType = 0;
                 object.ItemId = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Count = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -20148,7 +20148,7 @@ $root.Mail = (function() {
          */
         function ReqMailList(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -20235,7 +20235,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -20247,7 +20247,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.ReqMailList();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -20329,7 +20329,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.ReqMailList();
+            let message = new $root.Mail.ReqMailList();
             if (object.Cursor != null)
                 message.Cursor = object.Cursor | 0;
             if (object.PageSize != null)
@@ -20353,7 +20353,7 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 object.Cursor = 0;
                 object.PageSize = 0;
@@ -20416,7 +20416,7 @@ $root.Mail = (function() {
         function RespMailList(properties) {
             this.Mails = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -20474,7 +20474,7 @@ $root.Mail = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.Mails != null && message.Mails.length)
-                for (var i = 0; i < message.Mails.length; ++i)
+                for (let i = 0; i < message.Mails.length; ++i)
                     $root.Mail.MailInfo.encode(message.Mails[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), q + 1).ldelim();
             if (message.UnreadCount != null && Object.hasOwnProperty.call(message, "UnreadCount"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.UnreadCount);
@@ -20514,7 +20514,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -20526,7 +20526,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.RespMailList();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -20591,8 +20591,8 @@ $root.Mail = (function() {
             if (message.Mails != null && Object.hasOwnProperty.call(message, "Mails")) {
                 if (!Array.isArray(message.Mails))
                     return "Mails: array expected";
-                for (var i = 0; i < message.Mails.length; ++i) {
-                    var error = $root.Mail.MailInfo.verify(message.Mails[i], long + 1);
+                for (let i = 0; i < message.Mails.length; ++i) {
+                    let error = $root.Mail.MailInfo.verify(message.Mails[i], long + 1);
                     if (error)
                         return "Mails." + error;
                 }
@@ -20623,12 +20623,12 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.RespMailList();
+            let message = new $root.Mail.RespMailList();
             if (object.Mails) {
                 if (!Array.isArray(object.Mails))
                     throw TypeError(".Mail.RespMailList.Mails: array expected");
                 message.Mails = [];
-                for (var i = 0; i < object.Mails.length; ++i) {
+                for (let i = 0; i < object.Mails.length; ++i) {
                     if (!$util.isObject(object.Mails[i]))
                         throw TypeError(".Mail.RespMailList.Mails: object expected");
                     message.Mails[i] = $root.Mail.MailInfo.fromObject(object.Mails[i], long + 1);
@@ -20657,7 +20657,7 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.arrays || options.defaults)
                 object.Mails = [];
             if (options.defaults) {
@@ -20666,7 +20666,7 @@ $root.Mail = (function() {
             }
             if (message.Mails && message.Mails.length) {
                 object.Mails = [];
-                for (var j = 0; j < message.Mails.length; ++j)
+                for (let j = 0; j < message.Mails.length; ++j)
                     object.Mails[j] = $root.Mail.MailInfo.toObject(message.Mails[j], options, q + 1);
             }
             if (message.UnreadCount != null && Object.hasOwnProperty.call(message, "UnreadCount"))
@@ -20724,7 +20724,7 @@ $root.Mail = (function() {
          */
         function ReqMailRead(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -20801,7 +20801,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -20813,7 +20813,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.ReqMailRead();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -20888,7 +20888,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.ReqMailRead();
+            let message = new $root.Mail.ReqMailRead();
             if (object.MailId != null)
                 if ($util.Long)
                     message.MailId = $util.Long.fromValue(object.MailId, false);
@@ -20917,10 +20917,10 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.MailId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.MailId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -20990,7 +20990,7 @@ $root.Mail = (function() {
         function RespMailRead(properties) {
             this.Attachments = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -21102,7 +21102,7 @@ $root.Mail = (function() {
             if (message.MailStatus != null && Object.hasOwnProperty.call(message, "MailStatus"))
                 writer.uint32(/* id 7, wireType 0 =*/56).int32(message.MailStatus);
             if (message.Attachments != null && message.Attachments.length)
-                for (var i = 0; i < message.Attachments.length; ++i)
+                for (let i = 0; i < message.Attachments.length; ++i)
                     $root.Mail.MailAttachmentInfo.encode(message.Attachments[i], writer.uint32(/* id 8, wireType 2 =*/66).fork(), q + 1).ldelim();
             return writer;
         };
@@ -21138,7 +21138,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -21150,7 +21150,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.RespMailRead();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -21256,8 +21256,8 @@ $root.Mail = (function() {
             if (message.Attachments != null && Object.hasOwnProperty.call(message, "Attachments")) {
                 if (!Array.isArray(message.Attachments))
                     return "Attachments: array expected";
-                for (var i = 0; i < message.Attachments.length; ++i) {
-                    var error = $root.Mail.MailAttachmentInfo.verify(message.Attachments[i], long + 1);
+                for (let i = 0; i < message.Attachments.length; ++i) {
+                    let error = $root.Mail.MailAttachmentInfo.verify(message.Attachments[i], long + 1);
                     if (error)
                         return "Attachments." + error;
                 }
@@ -21282,7 +21282,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.RespMailRead();
+            let message = new $root.Mail.RespMailRead();
             if (object.MailId != null)
                 if ($util.Long)
                     message.MailId = $util.Long.fromValue(object.MailId, false);
@@ -21315,7 +21315,7 @@ $root.Mail = (function() {
                 if (!Array.isArray(object.Attachments))
                     throw TypeError(".Mail.RespMailRead.Attachments: array expected");
                 message.Attachments = [];
-                for (var i = 0; i < object.Attachments.length; ++i) {
+                for (let i = 0; i < object.Attachments.length; ++i) {
                     if (!$util.isObject(object.Attachments[i]))
                         throw TypeError(".Mail.RespMailRead.Attachments: object expected");
                     message.Attachments[i] = $root.Mail.MailAttachmentInfo.fromObject(object.Attachments[i], long + 1);
@@ -21340,12 +21340,12 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.arrays || options.defaults)
                 object.Attachments = [];
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.MailId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.MailId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -21353,7 +21353,7 @@ $root.Mail = (function() {
                 object.Content = "";
                 object.TemplateId = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.TemplateVersion = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.TemplateVersion = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -21386,7 +21386,7 @@ $root.Mail = (function() {
                 object.MailStatus = message.MailStatus;
             if (message.Attachments && message.Attachments.length) {
                 object.Attachments = [];
-                for (var j = 0; j < message.Attachments.length; ++j)
+                for (let j = 0; j < message.Attachments.length; ++j)
                     object.Attachments[j] = $root.Mail.MailAttachmentInfo.toObject(message.Attachments[j], options, q + 1);
             }
             return object;
@@ -21440,7 +21440,7 @@ $root.Mail = (function() {
          */
         function ReqMailDelete(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -21517,7 +21517,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -21529,7 +21529,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.ReqMailDelete();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -21604,7 +21604,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.ReqMailDelete();
+            let message = new $root.Mail.ReqMailDelete();
             if (object.MailId != null)
                 if ($util.Long)
                     message.MailId = $util.Long.fromValue(object.MailId, false);
@@ -21633,10 +21633,10 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.MailId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.MailId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -21698,7 +21698,7 @@ $root.Mail = (function() {
          */
         function RespMailDelete(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -21775,7 +21775,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -21787,7 +21787,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.RespMailDelete();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -21862,7 +21862,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.RespMailDelete();
+            let message = new $root.Mail.RespMailDelete();
             if (object.MailId != null)
                 if ($util.Long)
                     message.MailId = $util.Long.fromValue(object.MailId, false);
@@ -21891,10 +21891,10 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults)
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.MailId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.MailId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -21958,7 +21958,7 @@ $root.Mail = (function() {
         function NotifyMailChanged(properties) {
             this.ChangedMailIds = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -22009,7 +22009,7 @@ $root.Mail = (function() {
                 throw Error("max depth exceeded");
             if (message.ChangedMailIds != null && message.ChangedMailIds.length) {
                 writer.uint32(/* id 1, wireType 2 =*/10).fork();
-                for (var i = 0; i < message.ChangedMailIds.length; ++i)
+                for (let i = 0; i < message.ChangedMailIds.length; ++i)
                     writer.int64(message.ChangedMailIds[i]);
                 writer.ldelim();
             }
@@ -22049,7 +22049,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -22061,7 +22061,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.NotifyMailChanged();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -22069,7 +22069,7 @@ $root.Mail = (function() {
                         if (!(message.ChangedMailIds && message.ChangedMailIds.length))
                             message.ChangedMailIds = [];
                         if ((tag & 7) === 2) {
-                            var end2 = reader.uint32() + reader.pos;
+                            let end2 = reader.uint32() + reader.pos;
                             if (end2 > reader.len)
                                 throw RangeError("index out of range");
                             reader.len = end2;
@@ -22133,7 +22133,7 @@ $root.Mail = (function() {
             if (message.ChangedMailIds != null && Object.hasOwnProperty.call(message, "ChangedMailIds")) {
                 if (!Array.isArray(message.ChangedMailIds))
                     return "ChangedMailIds: array expected";
-                for (var i = 0; i < message.ChangedMailIds.length; ++i)
+                for (let i = 0; i < message.ChangedMailIds.length; ++i)
                     if (!$util.isInteger(message.ChangedMailIds[i]) && !(message.ChangedMailIds[i] && $util.isInteger(message.ChangedMailIds[i].low) && $util.isInteger(message.ChangedMailIds[i].high)))
                         return "ChangedMailIds: integer|Long[] expected";
             }
@@ -22160,12 +22160,12 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.NotifyMailChanged();
+            let message = new $root.Mail.NotifyMailChanged();
             if (object.ChangedMailIds) {
                 if (!Array.isArray(object.ChangedMailIds))
                     throw TypeError(".Mail.NotifyMailChanged.ChangedMailIds: array expected");
                 message.ChangedMailIds = [];
-                for (var i = 0; i < object.ChangedMailIds.length; ++i)
+                for (let i = 0; i < object.ChangedMailIds.length; ++i)
                     if ($util.Long)
                         message.ChangedMailIds[i] = $util.Long.fromValue(object.ChangedMailIds[i], false);
                     else if (typeof object.ChangedMailIds[i] === "string")
@@ -22196,14 +22196,14 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.arrays || options.defaults)
                 object.ChangedMailIds = [];
             if (options.defaults)
                 object.UnreadCount = 0;
             if (message.ChangedMailIds && message.ChangedMailIds.length) {
                 object.ChangedMailIds = [];
-                for (var j = 0; j < message.ChangedMailIds.length; ++j)
+                for (let j = 0; j < message.ChangedMailIds.length; ++j)
                     if (typeof BigInt !== "undefined" && options.longs === BigInt)
                         object.ChangedMailIds[j] = typeof message.ChangedMailIds[j] === "number" ? BigInt(message.ChangedMailIds[j]) : $util.Long.fromBits(message.ChangedMailIds[j].low >>> 0, message.ChangedMailIds[j].high >>> 0, false).toBigInt();
                     else if (typeof message.ChangedMailIds[j] === "number")
@@ -22265,7 +22265,7 @@ $root.Mail = (function() {
          */
         function ReqMailClaimAttachment(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -22352,7 +22352,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -22364,7 +22364,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.ReqMailClaimAttachment();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -22446,7 +22446,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.ReqMailClaimAttachment();
+            let message = new $root.Mail.ReqMailClaimAttachment();
             if (object.MailId != null)
                 if ($util.Long)
                     message.MailId = $util.Long.fromValue(object.MailId, false);
@@ -22477,10 +22477,10 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.MailId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.MailId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -22553,7 +22553,7 @@ $root.Mail = (function() {
          */
         function RespMailClaimAttachment(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -22700,7 +22700,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -22712,7 +22712,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.RespMailClaimAttachment();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -22836,7 +22836,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.RespMailClaimAttachment();
+            let message = new $root.Mail.RespMailClaimAttachment();
             if (object.MailId != null)
                 if ($util.Long)
                     message.MailId = $util.Long.fromValue(object.MailId, false);
@@ -22886,10 +22886,10 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.defaults) {
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.MailId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.MailId = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -22897,7 +22897,7 @@ $root.Mail = (function() {
                 object.RewardType = 0;
                 object.ItemId = 0;
                 if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
+                    let long = new $util.Long(0, 0, false);
                     object.Count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : typeof BigInt !== "undefined" && options.longs === BigInt ? long.toBigInt() : long;
                 } else
                     object.Count = options.longs === String ? "0" : typeof BigInt !== "undefined" && options.longs === BigInt ? BigInt("0") : 0;
@@ -22981,7 +22981,7 @@ $root.Mail = (function() {
          */
         function ReqMailClaimAllAttachment(properties) {
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -23048,7 +23048,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -23060,7 +23060,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.ReqMailClaimAllAttachment();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -23188,7 +23188,7 @@ $root.Mail = (function() {
         function RespMailClaimAllAttachment(properties) {
             this.Slots = [];
             if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null && keys[i] !== "__proto__")
                         this[keys[i]] = properties[keys[i]];
         }
@@ -23238,7 +23238,7 @@ $root.Mail = (function() {
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
             if (message.Slots != null && message.Slots.length)
-                for (var i = 0; i < message.Slots.length; ++i)
+                for (let i = 0; i < message.Slots.length; ++i)
                     $root.Mail.MailClaimedSlot.encode(message.Slots[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), q + 1).ldelim();
             if (message.ClaimedCount != null && Object.hasOwnProperty.call(message, "ClaimedCount"))
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.ClaimedCount);
@@ -23276,7 +23276,7 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $Reader.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var end, message;
+            let end, message;
             if (length === undefined)
                 end = reader.len;
             else {
@@ -23288,7 +23288,7 @@ $root.Mail = (function() {
             }
             message = new $root.Mail.RespMailClaimAllAttachment();
             while (reader.pos < end) {
-                var tag = reader.uint32();
+                let tag = reader.uint32();
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
@@ -23349,8 +23349,8 @@ $root.Mail = (function() {
             if (message.Slots != null && Object.hasOwnProperty.call(message, "Slots")) {
                 if (!Array.isArray(message.Slots))
                     return "Slots: array expected";
-                for (var i = 0; i < message.Slots.length; ++i) {
-                    var error = $root.Mail.MailClaimedSlot.verify(message.Slots[i], long + 1);
+                for (let i = 0; i < message.Slots.length; ++i) {
+                    let error = $root.Mail.MailClaimedSlot.verify(message.Slots[i], long + 1);
                     if (error)
                         return "Slots." + error;
                 }
@@ -23378,12 +23378,12 @@ $root.Mail = (function() {
                 long = 0;
             if (long > $util.recursionLimit)
                 throw Error("maximum nesting depth exceeded");
-            var message = new $root.Mail.RespMailClaimAllAttachment();
+            let message = new $root.Mail.RespMailClaimAllAttachment();
             if (object.Slots) {
                 if (!Array.isArray(object.Slots))
                     throw TypeError(".Mail.RespMailClaimAllAttachment.Slots: array expected");
                 message.Slots = [];
-                for (var i = 0; i < object.Slots.length; ++i) {
+                for (let i = 0; i < object.Slots.length; ++i) {
                     if (!$util.isObject(object.Slots[i]))
                         throw TypeError(".Mail.RespMailClaimAllAttachment.Slots: object expected");
                     message.Slots[i] = $root.Mail.MailClaimedSlot.fromObject(object.Slots[i], long + 1);
@@ -23410,14 +23410,14 @@ $root.Mail = (function() {
                 q = 0;
             if (q > $util.recursionLimit)
                 throw Error("max depth exceeded");
-            var object = {};
+            let object = {};
             if (options.arrays || options.defaults)
                 object.Slots = [];
             if (options.defaults)
                 object.ClaimedCount = 0;
             if (message.Slots && message.Slots.length) {
                 object.Slots = [];
-                for (var j = 0; j < message.Slots.length; ++j)
+                for (let j = 0; j < message.Slots.length; ++j)
                     object.Slots[j] = $root.Mail.MailClaimedSlot.toObject(message.Slots[j], options, q + 1);
             }
             if (message.ClaimedCount != null && Object.hasOwnProperty.call(message, "ClaimedCount"))
@@ -23457,4 +23457,4 @@ $root.Mail = (function() {
     return Mail;
 })();
 
-module.exports = $root;
+export { $root as default };

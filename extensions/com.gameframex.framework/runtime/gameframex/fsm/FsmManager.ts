@@ -40,7 +40,7 @@ export default class FsmManager implements IFsmManager, IModule {
             return;
         }
 
-        const snapshot = [...this.m_Fsms.values()];
+        const snapshot = Array.from(this.m_Fsms.values());
         for (const fsm of snapshot) {
             if (fsm.IsDestroyed) {
                 continue;
@@ -83,7 +83,7 @@ export default class FsmManager implements IFsmManager, IModule {
      * 获取所有有限状态机。
      */
     public GetAllFsms(): FsmBase[] {
-        return [...this.m_Fsms.values()];
+        return Array.from(this.m_Fsms.values());
     }
 
     /**

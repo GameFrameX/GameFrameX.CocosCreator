@@ -1,8 +1,7 @@
 import { beforeAll, describe, expect, it } from "vitest";
 import ProtoMessageHelper from "../../assets/gameframex/network/ProtoMessageHelper";
 import ProtoMessageRegister from "../../assets/gameframex/protobuf/ProtoMessageRegister";
-// @ts-expect-error -- 生成物无类型声明文件;default 即 $root 命名空间根
-import $root from "../../assets/gameframex/protobuf/proto-bundle.js";
+import $root from "../../assets/gameframex/protobuf/proto-bundle";
 import { User } from "../../assets/gameframex/protobuf/_0300_User";
 
 /**

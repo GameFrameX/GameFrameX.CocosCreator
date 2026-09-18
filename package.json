@@ -11,9 +11,13 @@
     "test:watch": "vitest",
     "gen:proto": "bash ../Protobuf/Proto2TsExport_CocosCreator.sh",
     "gen:config": "bash ../Config/gen-cocos-json.sh",
-    "pretest": "node tools/sync-framework.mjs"
+    "pretest": "node tools/sync-framework.mjs",
+    "smoke:live": "GFX_LIVE_SMOKE=1 vitest run tests/network/liveServer.smoke.test.ts",
+    "build:wechat": "CocosCreator --project . --build 'platform=wechatgame;debug=true' || /Applications/Cocos/Creator/3.8.0/CocosCreator.app/Contents/MacOS/CocosCreator --project \"$(pwd)\" --build 'platform=wechatgame;debug=true' && node tools/patch-wechat-config.mjs",
+    "postbuild:wechat": "node tools/patch-wechat-config.mjs"
   },
   "devDependencies": {
+    "miniprogram-automator": "^0.12.1",
     "protobufjs": "^7.4.0",
     "protobufjs-cli": "^1.1.3",
     "typescript": "^5.5.4",

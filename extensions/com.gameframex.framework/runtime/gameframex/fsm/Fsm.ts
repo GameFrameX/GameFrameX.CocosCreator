@@ -174,7 +174,7 @@ export default class Fsm<T extends object> extends FsmBase implements IFsm<T> {
      * 获取有限状态机的所有状态。
      */
     public GetAllStates(): FsmState<T>[] {
-        return [...this.m_States.values()];
+        return Array.from(this.m_States.values());
     }
 
     /**
