@@ -14,6 +14,7 @@ import ProcedurePatchDone from "../../assets/scripts/framework/procedure/Procedu
 import ProcedurePatchInit from "../../assets/scripts/framework/procedure/ProcedurePatchInit";
 import ProcedureUpdateManifest from "../../assets/scripts/framework/procedure/ProcedureUpdateManifest";
 import ProcedureUpdateStaticVersion from "../../assets/scripts/framework/procedure/ProcedureUpdateStaticVersion";
+import { run as runPatchHarness } from "./patch.harness";
 
 /**
  * Procedure 契约(对照 Unity GameFrameX.Procedure.Runtime + 启动链 spec §3.4):
@@ -181,9 +182,8 @@ describe("ProcedureManager + 11 启动流程", () => {
 
 describe("Patch 六步实装(注入态)", () => {
     it("注入 PatchContext:六步走完,差异 Bundle 被加载,进度事件齐备,版本落盘", async () => {
-        const { run } = await import("./patch.harness");
         const localVersions = new Map([["patch.version.remote", "hash-v1"]]);
-        const result = await run({
+        const result = await runPatchHarness({
             manifest: { version: 2, bundles: { remote: "hash-v2" } },
             localVersions,
         });

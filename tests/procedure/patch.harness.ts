@@ -17,6 +17,7 @@ import ProcedureDownloadWebFiles from "../../assets/scripts/framework/procedure/
 import ProcedurePatchDone from "../../assets/scripts/framework/procedure/ProcedurePatchDone";
 import EventSystems from "../../assets/gameframex/event/EventSystems";
 import type { PatchManifest } from "../../assets/gameframex/download/PatchPlanner";
+import { VersionStore } from "../../assets/gameframex/download/PatchPlanner";
 import EventName from "../../assets/gameframex/event/EventName";
 
 export interface PatchHarnessOptions {
@@ -74,7 +75,7 @@ export async function run(opts: PatchHarnessOptions): Promise<PatchHarnessResult
         manifestUrl: "mock://manifest.json",
         server: "mock://cdn",
         bundleNames: ["remote"],
-        store: { get: (k: string) => storeRecords.get(k) ?? null, set: (k: string, v: string) => void storeRecords.set(k, v) },
+        store: new VersionStore({ get: (k: string) => storeRecords.get(k) ?? null, set: (k: string, v: string) => void storeRecords.set(k, v) }),
         service,
         events,
     });
