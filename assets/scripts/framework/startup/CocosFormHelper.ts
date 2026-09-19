@@ -95,6 +95,7 @@ export default class CocosFormHelper implements IFormHelper {
         const node = instantiate(prefab);
         node.active = false;
         this._visuals.set(form, node);
+        form.VisualRoot = node;
     }
 
     public addToGroup(form: UIForm, groupName: string): void {

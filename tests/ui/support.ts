@@ -91,8 +91,14 @@ export class MockFormHelper implements IFormHelper {
     private _loadGate: Promise<void> | null = null;
     private _gateResolve: (() => void) | null = null;
 
+    /** 原工厂注册(load 按 formKey 取工厂;测试灵活性入口) */
     public register(formKey: string, factory: () => UIForm): void {
         this.factories.set(formKey, factory);
+    }
+
+    /** IFormHelper.registerForm:经工厂表记录注册 */
+    public registerForm(formKey: string, ctor: new () => UIForm, _bundle: string, _assetPath: string): void {
+        this.register(formKey, () => new ctor());
     }
 
     /** 设置加载闸门:下一次 load 会等待 releaseLoadGate(测并发打开;不用计时器) */

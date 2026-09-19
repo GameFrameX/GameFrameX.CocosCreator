@@ -38,7 +38,7 @@ export default class HotfixLauncher {
         try {
             await GameApp.UI.OpenAsync("UILogin");
         } catch (error) {
-            Log.warn("Hotfix", "UILogin 打开跳过(界面未注册,Phase 3/6 接入)", error);
+            Log.warn("Hotfix", "UILogin 打开跳过", error);
         }
     }
 }

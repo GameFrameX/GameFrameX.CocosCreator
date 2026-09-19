@@ -22,9 +22,6 @@ export default class CocosConfigLoader {
      * 预载 base Bundle 全部配置表;幂等(已加载直接返回查表函数)。
      */
     public async prepare(): Promise<TableLoader> {
-        if (this._tables.size > 0) {
-            return (name: string) => this._tables.get(name);
-        }
         const bundle = await new Promise<AssetManager.Bundle>((resolve, reject) => {
             assetManager.loadBundle("base", (err, loaded) => {
                 if (err || !loaded) {
@@ -34,11 +31,14 @@ export default class CocosConfigLoader {
                 resolve(loaded);
             });
         });
+        if (this._tables.size > 0) {
+            return (name: string) => this._tables.get(name);
+        }
         await Promise.all(
             TABLE_NAMES.map(
                 (name) =>
                     new Promise<void>((resolve, reject) => {
-                        bundle.load(`${name}.json`, JsonAsset, (err, asset) => {
+                        bundle.load(`config/${name}`, JsonAsset, (err, asset) => {
                             if (err || !asset) {
                                 reject(new Error(`[CocosConfigLoader] 表加载失败:${name}(${err?.message ?? "no asset"})`));
                                 return;
@@ -52,3 +52,4 @@ export default class CocosConfigLoader {
         return (name: string) => this._tables.get(name);
     }
 }
+

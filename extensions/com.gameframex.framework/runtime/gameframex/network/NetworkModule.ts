@@ -85,6 +85,13 @@ export default class NetworkModule implements IModule {
     }
 
     /**
+     * 通道是否已建立连接(业务层连接复用判断;帧级状态见 WebSocketChannel.State)。
+     */
+    public get isConnected(): boolean {
+        return this._channel.isConnected;
+    }
+
+    /**
      * 发起连接(委托通道;未连接期间的 call/send 随通道队列缓冲)。
      */
     public connect(host: string, port: number): void {

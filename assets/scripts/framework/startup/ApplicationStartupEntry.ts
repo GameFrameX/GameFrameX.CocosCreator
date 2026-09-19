@@ -7,6 +7,8 @@ import type ProcedureBase from "../../../gameframex/procedure/ProcedureBase";
 import CocosConfigLoader from "./CocosConfigLoader";
 import CocosFormHelper from "./CocosFormHelper";
 import HotfixLauncher from "../../../hotfix/HotfixLauncher";
+import UILogin from "../../../hotfix/ui/UILogin";
+import UILoginView from "./UILoginView";
 import GameEntryComponent, { reportStage } from "./GameEntryComponent";
 import CocosSettingStorage from "./CocosSettingStorage";
 import ProcedureLauncherState from "../procedure/ProcedureLauncherState";
@@ -51,7 +53,12 @@ export default class ApplicationStartupEntry extends Component {
                 return;
             }
             reportStage("uiRoot", String(this.uiRoot?.name ?? "null"));
-            GameApp.bootstrap({ settingStorage: new CocosSettingStorage(), formHelper: new CocosFormHelper(this.uiRoot) });
+            const formHelper = new CocosFormHelper(this.uiRoot);
+            GameApp.bootstrap({ settingStorage: new CocosSettingStorage(), formHelper });
+            // 界面登记(builtin/base Bundle;UILogin 走 base,Prefab 随 Bundle 化)
+            formHelper.registerForm("UILogin", UILogin, "base", "UILogin");
+            // 视图解析:Prefab 根的 UILoginView 组件实现 ILoginView
+            UILogin.viewResolver = (root) => (root as { getComponent?: (t: typeof UILoginView) => UILoginView | null }).getComponent?.(UILoginView) ?? null;
             reportStage("bootstrap.done", "");
 
             // 协议注册:静态 bundle 注入 + 全量消息注册 + R7 自检

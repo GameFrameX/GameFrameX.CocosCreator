@@ -11,6 +11,12 @@ import type UIForm from "./UIForm";
  */
 export interface IFormHelper {
     /**
+     * 登记界面(业务启动时批量调用):formKey → 逻辑类 + 资源定位。
+     * 未登记的 formKey 在 load 时由后端抛错。
+     */
+    registerForm(formKey: string, ctor: new () => UIForm, bundle: string, assetPath: string): void;
+
+    /**
      * 异步加载界面定义并创建界面逻辑实例(新实例;Prefab 轨=加载 Prefab 并绑定逻辑类,
      * FairyGUI 轨=加载组件包并创建逻辑类;返回时尚未初始化,身份由管理器分配)。
      */

@@ -104,6 +104,12 @@ export default abstract class UIForm implements IUIForm {
     // ── 业务生命周期钩子(Unity 同名同参;覆写时按需 super 保持基类状态语义) ──────────
 
     /** 界面初始化前执行(实例创建一次;此时 SerialId/UIGroup 尚未就绪,禁止访问) */
+    /**
+     * 引擎视觉根(由 FormHelper 在 instantiate 时填充;Cocos 侧为 Node)。
+     * 核心层零引擎依赖(unknown);业务层按需窄化访问子节点。
+     */
+    public VisualRoot: unknown = null;
+
     public OnAwake(): void {
     }
 

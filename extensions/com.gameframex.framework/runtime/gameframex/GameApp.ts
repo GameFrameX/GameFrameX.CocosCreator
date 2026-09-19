@@ -16,6 +16,10 @@ export interface GameAppOptions {
     settingStorage: ISettingStorage;
     /** UI 后端(CocosFormHelper 主轨 / FairyGUIFormHelper 可选轨) */
     formHelper: IFormHelper;
+    /** 网络模块(缺省自建;测试注入 mock 通道实例) */
+    networkModule?: NetworkModule;
+    /** 共享事件池(缺省 GameApp.Event 自建;注入时 Network/UI 与其共享) */
+    events?: EventSystems;
 }
 
 /**
@@ -107,12 +111,15 @@ export default class GameApp {
         if (GameEntry.hasModule("Timer")) {
             throw new Error("[GameApp] 已 bootstrap,重复装配前须先 shutdownAll()");
         }
+        if (options.events) {
+            this._event = options.events;
+        }
         const events = this.Event;
         GameEntry.registerModule("Timer", new TimerModule());
         GameEntry.registerModule("Fsm", new FsmManager());
         GameEntry.registerModule("Procedure", new ProcedureManager());
         GameEntry.registerModule("UI", new UIManager(options.formHelper));
-        GameEntry.registerModule("Network", new NetworkModule({ events }));
+        GameEntry.registerModule("Network", options.networkModule ?? new NetworkModule({ events }));
         GameEntry.registerModule("Config", new ConfigModule());
         GameEntry.registerModule("Localization", new LocalizationModule());
         GameEntry.registerModule("Setting", new SettingModule(options.settingStorage));

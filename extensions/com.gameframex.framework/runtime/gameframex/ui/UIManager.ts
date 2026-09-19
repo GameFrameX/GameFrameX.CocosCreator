@@ -86,6 +86,13 @@ export default class UIManager implements IModule {
     }
 
     /**
+     * 登记界面(透传至 FormHelper 后端;业务启动时批量调用)。
+     */
+    public RegisterForm(formKey: string, ctor: new () => UIForm, bundle: string, assetPath: string): void {
+        this._formHelper.registerForm(formKey, ctor, bundle, assetPath);
+    }
+
+    /**
      * 异步打开界面(同 formKey 已打开则返回既有实例并仅触发 OnRefocus,不重复生命周期;
      * 并发打开共享同一次后端加载)。
      *
