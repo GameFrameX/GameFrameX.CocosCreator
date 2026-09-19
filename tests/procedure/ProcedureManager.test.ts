@@ -84,19 +84,19 @@ describe("ProcedureManager + 11 启动流程", () => {
         expect(fsm.GetData<{ mode: string }>(BlackBoardKeys.StartupOptions)).toEqual(options);
     });
 
-    it("未注入 HotfixLauncher 时:10 条 info + 终态 warn 告警(不阻断)", () => {
-        const logSpy = vi.spyOn(console, "log").mockImplementation(() => {
-        });
-        const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {
-        });
+    it("未注入 HotfixLauncher 时:Patch 段降级直通,链日志齐备", () => {
+        const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
+        const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
         const { procedureManager } = buildStartup();
         procedureManager.StartProcedure(ProcedureLauncherState);
 
-        const procedureLogs = logSpy.mock.calls.filter((args) => String(args[0]).startsWith("[GameFrameX][Procedure]") || String(args[0]).startsWith("[GameFrameX][Patch]"));
-        expect(procedureLogs).toHaveLength(10);
+        const procedureLogs = logSpy.mock.calls.filter((args) => String(args[0]).startsWith("[GameFrameX][Procedure]"));
+        expect(procedureLogs).toHaveLength(4);
         expect(procedureLogs.some((args) => String(args[0]).includes("[ProcedureLauncherState]"))).toBe(true);
         const gameLauncherWarns = warnSpy.mock.calls.filter((args) => String(args[0]).includes("未注入 StartupHotfixLauncher"));
-        expect(gameLauncherWarns).toHaveLength(1);
+
+        expect(warnSpy.mock.calls.filter((args) => String(args[0]).includes("未注入 StartupHotfixLauncher"))).toHaveLength(1);
+        expect(warnSpy.mock.calls.filter((args) => String(args[0]).includes("未注入 PatchContext")).length).toBe(6);
     });
 
     it("注入 HotfixLauncher 后:GameLauncherState 移交 main() 且链日志 11 条", async () => {
@@ -115,7 +115,7 @@ describe("ProcedureManager + 11 启动流程", () => {
 
         expect(mainCalls).toHaveLength(1);
         const procedureLogs = logSpy.mock.calls.filter((args) => String(args[0]).startsWith("[GameFrameX][Procedure]") || String(args[0]).startsWith("[GameFrameX][Patch]"));
-        expect(procedureLogs).toHaveLength(11);
+        expect(procedureLogs).toHaveLength(5);
     });
 
     it("HasProcedure/GetProcedure 查询注册流程", () => {
@@ -182,15 +182,16 @@ describe("ProcedureManager + 11 启动流程", () => {
 describe("Patch 六步实装(注入态)", () => {
     it("注入 PatchContext:六步走完,差异 Bundle 被加载,进度事件齐备,版本落盘", async () => {
         const { run } = await import("./patch.harness");
+        const localVersions = new Map([["patch.version.remote", "hash-v1"]]);
         const result = await run({
             manifest: { version: 2, bundles: { remote: "hash-v2" } },
-            localVersions: new Map([["patch.version.remote", "hash-v1"]]),
+            localVersions,
         });
         expect(result.reachedGameLauncher).toBe(true);
         expect(result.loadedBundles).toEqual(["remote"]);
         expect(result.progressEvents.some((e) => e.stage === "PatchInit" && e.progress === 0)).toBe(true);
         expect(result.progressEvents.some((e) => e.stage === "DownloadWebFiles" && e.progress === 1)).toBe(true);
         expect(result.progressEvents.some((e) => e.stage === "PatchDone")).toBe(true);
-        expect(result.records.get("patch.version.remote")).toBe("hash-v2");
+        expect(localVersions.get("patch.version.remote")).toBe("hash-v2");
     });
 });
