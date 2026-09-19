@@ -92,7 +92,7 @@ describe("ProcedureManager + 11 启动流程", () => {
         const { procedureManager } = buildStartup();
         procedureManager.StartProcedure(ProcedureLauncherState);
 
-        const procedureLogs = logSpy.mock.calls.filter((args) => String(args[0]).startsWith("[GameFrameX][Procedure]"));
+        const procedureLogs = logSpy.mock.calls.filter((args) => String(args[0]).startsWith("[GameFrameX][Procedure]") || String(args[0]).startsWith("[GameFrameX][Patch]"));
         expect(procedureLogs).toHaveLength(10);
         expect(procedureLogs.some((args) => String(args[0]).includes("[ProcedureLauncherState]"))).toBe(true);
         const gameLauncherWarns = warnSpy.mock.calls.filter((args) => String(args[0]).includes("未注入 StartupHotfixLauncher"));
@@ -114,7 +114,7 @@ describe("ProcedureManager + 11 启动流程", () => {
         await Promise.resolve();
 
         expect(mainCalls).toHaveLength(1);
-        const procedureLogs = logSpy.mock.calls.filter((args) => String(args[0]).startsWith("[GameFrameX][Procedure]"));
+        const procedureLogs = logSpy.mock.calls.filter((args) => String(args[0]).startsWith("[GameFrameX][Procedure]") || String(args[0]).startsWith("[GameFrameX][Patch]"));
         expect(procedureLogs).toHaveLength(11);
     });
 
@@ -175,5 +175,22 @@ describe("ProcedureManager + 11 启动流程", () => {
 
         expect(fsmManager.HasFsm(ProcedureManager, "Procedure")).toBe(false);
         expect(() => procedureManager.CurrentProcedure).toThrow("You must initialize procedure first.");
+    });
+});
+
+
+describe("Patch 六步实装(注入态)", () => {
+    it("注入 PatchContext:六步走完,差异 Bundle 被加载,进度事件齐备,版本落盘", async () => {
+        const { run } = await import("./patch.harness");
+        const result = await run({
+            manifest: { version: 2, bundles: { remote: "hash-v2" } },
+            localVersions: new Map([["patch.version.remote", "hash-v1"]]),
+        });
+        expect(result.reachedGameLauncher).toBe(true);
+        expect(result.loadedBundles).toEqual(["remote"]);
+        expect(result.progressEvents.some((e) => e.stage === "PatchInit" && e.progress === 0)).toBe(true);
+        expect(result.progressEvents.some((e) => e.stage === "DownloadWebFiles" && e.progress === 1)).toBe(true);
+        expect(result.progressEvents.some((e) => e.stage === "PatchDone")).toBe(true);
+        expect(result.records.get("patch.version.remote")).toBe("hash-v2");
     });
 });

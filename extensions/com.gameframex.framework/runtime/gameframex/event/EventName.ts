@@ -15,4 +15,6 @@ export default class EventName {
     public static readonly SocketReconnect = "SocketReconnect";
     /** 心跳丢失(超过阈值未收到 NotifyHeartBeat) */
     public static readonly NetworkMissHeartBeat = "NetworkMissHeartBeat";
+    /** Patch 六步进度(载荷 { stage, progress }) */
+    public static readonly PatchProgress = "PatchProgress";
 }

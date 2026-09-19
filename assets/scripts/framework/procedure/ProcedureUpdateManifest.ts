@@ -4,18 +4,27 @@ import type IProcedureManager from "../../../gameframex/procedure/IProcedureMana
 import ProcedureBase from "../../../gameframex/procedure/ProcedureBase";
 import { appendStartupTrace } from "./BlackBoardKeys";
 import ProcedureCreateDownloader from "./ProcedureCreateDownloader";
+import { emitPatchProgress, getPatchContext, logPatch } from "./PatchContext";
+import { getPatchManifest } from "./PatchContext";
+import PatchPlanner from "../../../gameframex/download/PatchPlanner";
 
 /**
- * 更新资源清单流程(Patch 第 3/6 步)。
- *
- * 对照 Unity `GameFrameX.Startup.Runtime.ProcedureUpdateManifest` 同名职责:
- * 对比本地与远程清单后切换到创建下载器流程。
- * 骨架阶段仅记录链序轨迹与日志;清单比对(md5 差异)为 Phase 5 实装位。
+ * ProcedureUpdateManifest(Patch 六步第 3 步;spec §3.4)。比对远程清单与本地记录,生成差异计划。
  */
 export default class ProcedureUpdateManifest extends ProcedureBase {
     public OnEnter(fsm: IFsm<IProcedureManager>): void {
         appendStartupTrace(fsm, this);
-        Log.info("Procedure", "[ProcedureUpdateManifest] OnEnter: Patch 3/6 更新资源清单(Phase 5 实装位)");
+        const context = getPatchContext(fsm);
+        if (!context) {
+            Log.warn("Patch", "未注入 PatchContext,Patch 段跳过(未配置远程更新)");
+            this.ChangeState(fsm, ProcedureCreateDownloader);
+            return;
+        }
+        const manifest = getPatchManifest(fsm);
+        const plan = PatchPlanner.plan(manifest, context.store, context.bundleNames);
+        fsm.SetData("__patch_plan__", plan);
+        logPatch("UpdateManifest", plan.upToDate ? "版本一致,无差异" : `差异 Bundle:${plan.bundlesToUpdate.join(",")}`);
+        emitPatchProgress(context.events, "UpdateManifest", 1);
         this.ChangeState(fsm, ProcedureCreateDownloader);
     }
 }

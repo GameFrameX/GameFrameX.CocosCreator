@@ -4,18 +4,29 @@ import type IProcedureManager from "../../../gameframex/procedure/IProcedureMana
 import ProcedureBase from "../../../gameframex/procedure/ProcedureBase";
 import { appendStartupTrace } from "./BlackBoardKeys";
 import ProcedureUpdateManifest from "./ProcedureUpdateManifest";
+import { emitPatchProgress, getPatchContext, logPatch } from "./PatchContext";
+import { setPatchManifest } from "./PatchContext";
 
 /**
- * 更新静态版本流程(Patch 第 2/6 步)。
- *
- * 对照 Unity `GameFrameX.Startup.Runtime.ProcedureUpdateStaticVersion` 同名职责:
- * 请求远程静态版本号后切换到更新资源清单流程。
- * 骨架阶段仅记录链序轨迹与日志;自定义版本清单请求为 Phase 5 实装位。
+ * ProcedureUpdateStaticVersion(Patch 六步第 2 步;spec §3.4)。拉取远程版本清单并暂存至 BlackBoard。
  */
 export default class ProcedureUpdateStaticVersion extends ProcedureBase {
     public OnEnter(fsm: IFsm<IProcedureManager>): void {
         appendStartupTrace(fsm, this);
-        Log.info("Procedure", "[ProcedureUpdateStaticVersion] OnEnter: Patch 2/6 更新静态版本(Phase 5 实装位)");
-        this.ChangeState(fsm, ProcedureUpdateManifest);
+        const context = getPatchContext(fsm);
+        if (!context) {
+            Log.warn("Patch", "未注入 PatchContext,Patch 段跳过(未配置远程更新)");
+            this.ChangeState(fsm, ProcedureUpdateManifest);
+            return;
+        }
+        logPatch("UpdateStaticVersion", `拉取版本清单:${context.manifestUrl}`);
+        context.service
+            .fetchManifest(context.manifestUrl)
+            .then((manifest) => {
+                setPatchManifest(fsm, manifest);
+                emitPatchProgress(context.events, "UpdateStaticVersion", 1);
+                this.ChangeState(fsm, ProcedureUpdateManifest);
+            })
+            .catch((error) => Log.error("Patch", "清单拉取失败", error));
     }
 }

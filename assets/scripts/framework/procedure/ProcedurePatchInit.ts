@@ -4,18 +4,22 @@ import type IProcedureManager from "../../../gameframex/procedure/IProcedureMana
 import ProcedureBase from "../../../gameframex/procedure/ProcedureBase";
 import { appendStartupTrace } from "./BlackBoardKeys";
 import ProcedureUpdateStaticVersion from "./ProcedureUpdateStaticVersion";
+import { emitPatchProgress, getPatchContext, logPatch } from "./PatchContext";
 
 /**
- * 资源包补丁初始化流程(Patch 第 1/6 步)。
- *
- * 对照 Unity `GameFrameX.Startup.Runtime.ProcedurePatchInit` 同名职责:
- * 按运行模式初始化资源包后切换到更新静态版本流程。
- * 骨架阶段仅记录链序轨迹与日志;远程 Bundle 初始化(替代 YooAsset)为 Phase 5 实装位。
+ * ProcedurePatchInit(Patch 六步第 1 步;spec §3.4)。校验 PatchContext 并开始 Patch 流程。
  */
 export default class ProcedurePatchInit extends ProcedureBase {
     public OnEnter(fsm: IFsm<IProcedureManager>): void {
         appendStartupTrace(fsm, this);
-        Log.info("Procedure", "[ProcedurePatchInit] OnEnter: Patch 1/6 资源包初始化(远程 Bundle 初始化为 Phase 5 实装位)");
+        const context = getPatchContext(fsm);
+        if (!context) {
+            Log.warn("Patch", "未注入 PatchContext,Patch 段跳过(未配置远程更新)");
+            this.ChangeState(fsm, ProcedureUpdateStaticVersion);
+            return;
+        }
+        logPatch("PatchInit", `Patch 初始化:${context.bundleNames.length} 个远程 Bundle,server=${context.server}`);
+        emitPatchProgress(context.events, "PatchInit", 0);
         this.ChangeState(fsm, ProcedureUpdateStaticVersion);
     }
 }
