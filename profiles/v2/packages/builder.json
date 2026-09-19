@@ -1,6 +1,26 @@
 {
-  "__version__": "1.3.6",
+  "__version": "1.3.6",
   "log": {
     "level": 4
-  }
+  },
+  "wechatgame": {
+    "platform": "wechatgame",
+    "buildPath": "build",
+    "debug": true,
+    "sourceMaps": false,
+    "md5Cache": false,
+    "includeModules": [
+      "base",
+      "2d",
+      "gfx-webgl",
+      "ui",
+      "tween",
+      "animation",
+      "audio",
+      "websocket",
+      "profiler",
+      "intersection-2d"
+    ]
+  },
+  "__version__": "1.3.6"
 }
