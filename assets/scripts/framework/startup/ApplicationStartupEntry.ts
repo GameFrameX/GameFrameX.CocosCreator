@@ -4,7 +4,9 @@ import Log from "../../../gameframex/base/Log";
 import ProtoMessageHelper from "../../../gameframex/network/ProtoMessageHelper";
 import ProtoMessageRegister from "../../../gameframex/protobuf/ProtoMessageRegister";
 import type ProcedureBase from "../../../gameframex/procedure/ProcedureBase";
+import CocosConfigLoader from "./CocosConfigLoader";
 import CocosFormHelper from "./CocosFormHelper";
+import HotfixLauncher from "../../../hotfix/HotfixLauncher";
 import GameEntryComponent, { reportStage } from "./GameEntryComponent";
 import CocosSettingStorage from "./CocosSettingStorage";
 import ProcedureLauncherState from "../procedure/ProcedureLauncherState";
@@ -18,6 +20,7 @@ import ProcedureCreateDownloader from "../procedure/ProcedureCreateDownloader";
 import ProcedureDownloadWebFiles from "../procedure/ProcedureDownloadWebFiles";
 import ProcedurePatchDone from "../procedure/ProcedurePatchDone";
 import ProcedureGameLauncherState from "../procedure/ProcedureGameLauncherState";
+import BlackBoardKeys from "../procedure/BlackBoardKeys";
 // pbjs static-module 产物(default 即 $root 命名空间根)
 import $root from "../../../gameframex/protobuf/proto-bundle";
 import { FRAMEWORK_VERSION } from "../../../gameframex/FrameworkVersion";
@@ -64,6 +67,13 @@ export default class ApplicationStartupEntry extends Component {
 
             // 11 步启动链(spec §3.4 同名同序)
             GameApp.Procedure.Initialize(GameApp.Fsm, createStartupProcedures());
+
+            // 经流程黑板注入 HotfixLauncher(Unity StartupHotfixLauncher 语义):预载 base Bundle 配置表
+            const tableLoader = await new CocosConfigLoader().prepare();
+            GameApp.Procedure.BlackBoard.SetData(BlackBoardKeys.StartupHotfixLauncher, {
+                main: () => HotfixLauncher.main(tableLoader),
+            });
+
             GameApp.Procedure.StartProcedure(ProcedureLauncherState);
             reportStage("procedure.started", GameApp.Procedure.CurrentProcedure?.constructor.name ?? "?");
 

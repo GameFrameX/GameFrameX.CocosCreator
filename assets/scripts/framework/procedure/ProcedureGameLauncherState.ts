@@ -2,7 +2,7 @@ import Log from "../../../gameframex/base/Log";
 import type IFsm from "../../../gameframex/fsm/IFsm";
 import type IProcedureManager from "../../../gameframex/procedure/IProcedureManager";
 import ProcedureBase from "../../../gameframex/procedure/ProcedureBase";
-import { appendStartupTrace } from "./BlackBoardKeys";
+import BlackBoardKeys, { appendStartupTrace } from "./BlackBoardKeys";
 
 /**
  * 游戏启动器流程(启动链终态)。
@@ -14,6 +14,12 @@ import { appendStartupTrace } from "./BlackBoardKeys";
 export default class ProcedureGameLauncherState extends ProcedureBase {
     public OnEnter(fsm: IFsm<IProcedureManager>): void {
         appendStartupTrace(fsm, this);
-        Log.info("Procedure", "[ProcedureGameLauncherState] OnEnter: 启动链完成,等待 HotfixLauncher 接线(Phase 5 实装位)");
+        const launcher = fsm.GetData(BlackBoardKeys.StartupHotfixLauncher) as { main: () => Promise<void> } | null;
+        if (launcher) {
+            Log.info("Procedure", "[ProcedureGameLauncherState] OnEnter: 启动链完成,移交 HotfixLauncher.main()");
+            launcher.main().catch((error) => Log.error("Procedure", "HotfixLauncher.main 执行失败", error));
+        } else {
+            Log.warn("Procedure", "[ProcedureGameLauncherState] OnEnter: 未注入 StartupHotfixLauncher(测试态/启动层未接线)");
+        }
     }
 }

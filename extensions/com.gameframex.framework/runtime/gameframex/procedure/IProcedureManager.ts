@@ -1,4 +1,5 @@
 import type IFsmManager from "../fsm/IFsmManager";
+import type IFsm from "../fsm/IFsm";
 import type ProcedureBase from "./ProcedureBase";
 import type TypeCtor from "../fsm/TypeCtor";
 
@@ -8,6 +9,9 @@ import type TypeCtor from "../fsm/TypeCtor";
  * 对照 Unity `GameFrameX.Procedure.Runtime.IProcedureManager`。
  */
 export default interface IProcedureManager {
+    /** 流程黑板(启动层注入/流程读取;未 Initialize 抛错)。 */
+    readonly BlackBoard: IFsm<IProcedureManager>;
+
     /** 获取当前流程。 */
     readonly CurrentProcedure: ProcedureBase | null;
 

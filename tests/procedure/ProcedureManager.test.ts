@@ -84,16 +84,38 @@ describe("ProcedureManager + 11 启动流程", () => {
         expect(fsm.GetData<{ mode: string }>(BlackBoardKeys.StartupOptions)).toEqual(options);
     });
 
-    it("每个流程 OnEnter 输出日志(共 11 条 Procedure 日志)", () => {
+    it("未注入 HotfixLauncher 时:10 条 info + 终态 warn 告警(不阻断)", () => {
         const logSpy = vi.spyOn(console, "log").mockImplementation(() => {
+        });
+        const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {
         });
         const { procedureManager } = buildStartup();
         procedureManager.StartProcedure(ProcedureLauncherState);
 
         const procedureLogs = logSpy.mock.calls.filter((args) => String(args[0]).startsWith("[GameFrameX][Procedure]"));
-        expect(procedureLogs).toHaveLength(11);
+        expect(procedureLogs).toHaveLength(10);
         expect(procedureLogs.some((args) => String(args[0]).includes("[ProcedureLauncherState]"))).toBe(true);
-        expect(procedureLogs.some((args) => String(args[0]).includes("[ProcedureGameLauncherState]"))).toBe(true);
+        const gameLauncherWarns = warnSpy.mock.calls.filter((args) => String(args[0]).includes("未注入 StartupHotfixLauncher"));
+        expect(gameLauncherWarns).toHaveLength(1);
+    });
+
+    it("注入 HotfixLauncher 后:GameLauncherState 移交 main() 且链日志 11 条", async () => {
+        const logSpy = vi.spyOn(console, "log").mockImplementation(() => {
+        });
+        const mainCalls: number[] = [];
+        const { procedureManager } = buildStartup();
+        procedureManager.BlackBoard.SetData("__startup_hotfix_launcher__", {
+            main: () => {
+                mainCalls.push(1);
+                return Promise.resolve();
+            },
+        });
+        procedureManager.StartProcedure(ProcedureLauncherState);
+        await Promise.resolve();
+
+        expect(mainCalls).toHaveLength(1);
+        const procedureLogs = logSpy.mock.calls.filter((args) => String(args[0]).startsWith("[GameFrameX][Procedure]"));
+        expect(procedureLogs).toHaveLength(11);
     });
 
     it("HasProcedure/GetProcedure 查询注册流程", () => {

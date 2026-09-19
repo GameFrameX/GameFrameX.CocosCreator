@@ -64,6 +64,18 @@ export default class ProcedureManager implements IProcedureManager, IModule {
      * 开始流程。
      * @param procedureType 要开始的流程类型
      */
+    /**
+     * 流程黑板访问(启动层经此注入 StartupOptions/HotfixLauncher 等;对照 Unity BlackBoard 语义)。
+     * 未 Initialize 时为编程错误。
+     */
+    public get BlackBoard(): IFsm<IProcedureManager> {
+        if (this.m_ProcedureFsm == null) {
+            throw new Error("You must initialize procedure first.");
+        }
+
+        return this.m_ProcedureFsm;
+    }
+
     public StartProcedure(procedureType: TypeCtor<ProcedureBase>): void {
         if (this.m_ProcedureFsm == null) {
             throw new Error("You must initialize procedure first.");

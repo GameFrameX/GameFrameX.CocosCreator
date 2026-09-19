@@ -1,3 +1,9 @@
 {
-  "__version": "1.0.5"
+  "__version": "1.0.5",
+  "__version__": "1.0.5",
+  "fbx": {
+    "legacyFbxImporter": {
+      "visible": true
+    }
+  }
 }
