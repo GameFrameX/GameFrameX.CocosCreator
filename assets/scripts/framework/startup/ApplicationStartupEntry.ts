@@ -9,6 +9,10 @@ import CocosFormHelper from "./CocosFormHelper";
 import HotfixLauncher from "../../../hotfix/HotfixLauncher";
 import UILogin from "../../../hotfix/ui/UILogin";
 import UILoginView from "./UILoginView";
+import UIPlayerList from "../../../hotfix/ui/UIPlayerList";
+import UIPlayerListView from "../../../hotfix/ui/view/UIPlayerListView";
+import UIMain from "../../../hotfix/ui/UIMain";
+import UIMainView from "../../../hotfix/ui/view/UIMainView";
 import GameEntryComponent, { reportStage } from "./GameEntryComponent";
 import CocosSettingStorage from "./CocosSettingStorage";
 import ProcedureLauncherState from "../procedure/ProcedureLauncherState";
@@ -57,8 +61,12 @@ export default class ApplicationStartupEntry extends Component {
             GameApp.bootstrap({ settingStorage: new CocosSettingStorage(), formHelper });
             // 界面登记(builtin/base Bundle;UILogin 走 base,Prefab 随 Bundle 化)
             formHelper.registerForm("UILogin", UILogin, "base", "UILogin");
-            // 视图解析:Prefab 根的 UILoginView 组件实现 ILoginView
+            formHelper.registerForm("UIPlayerList", UIPlayerList, "base", "UIPlayerList");
+            formHelper.registerForm("UIMain", UIMain, "base", "UIMain");
+            // 视图解析:Prefab 根的 View 组件实现引擎无关视图契约
             UILogin.viewResolver = (root) => (root as { getComponent?: (t: typeof UILoginView) => UILoginView | null }).getComponent?.(UILoginView) ?? null;
+            UIPlayerList.viewResolver = (root) => (root as { getComponent?: (t: typeof UIPlayerListView) => UIPlayerListView | null }).getComponent?.(UIPlayerListView) ?? null;
+            UIMain.viewResolver = (root) => (root as { getComponent?: (t: typeof UIMainView) => UIMainView | null }).getComponent?.(UIMainView) ?? null;
             reportStage("bootstrap.done", "");
 
             // 协议注册:静态 bundle 注入 + 全量消息注册 + R7 自检

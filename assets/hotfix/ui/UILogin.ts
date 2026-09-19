@@ -76,7 +76,8 @@ export default class UILogin extends UIForm {
             }
 
             this.setStatus(`登录成功(${login.Id})角色 ${players.count} 个`);
-            Log.warn("UILogin", "UIPlayerList/UIPlayerCreate 为 Phase 6 实装位,当前仅展示结果");
+            await GameApp.UI.OpenAsync("UIPlayerList");
+            GameApp.UI.Close(this);
         } catch (error) {
             this.setStatus(`异常:${error instanceof Error ? error.message : String(error)}`);
             Log.error("UILogin", "登录链异常", error);
