@@ -107,6 +107,9 @@ export default class UILogin extends UIForm {
 
     private setStatus(text: string): void {
         this._view?.setStatus(text);
+        // 一次性诊断(验证后撤):登录各阶段写 dataset 供自动化读取
+        const doc = (globalThis as Record<string, unknown>).document as { body: { setAttribute(n: string, v: string): void } } | undefined;
+        doc?.body.setAttribute("data-login-stage", text);
     }
 }
 

@@ -1,4 +1,13 @@
 import { AssetManager, assetManager, instantiate, Node, Prefab } from "cc";
+
+/** 一次性诊断(验证后撤) */
+function mark(stage: string, detail = ""): void {
+    const doc = (globalThis as Record<string, unknown>).document as { body: { setAttribute(n: string, v: string): void; getAttribute(n: string): string | null } } | undefined;
+    if (doc) {
+        const prev = doc.body.getAttribute("data-formhelper") ?? "";
+        doc.body.setAttribute("data-formhelper", `${prev} | ${stage}${detail ? ":" + detail : ""}`.slice(-400));
+    }
+}
 import type UIForm from "../../../gameframex/ui/UIForm";
 import type { IFormHelper } from "../../../gameframex/ui/IFormHelper";
 import { UIGroupNameConstants } from "../../../gameframex/ui/UIGroup";
@@ -93,6 +102,7 @@ export default class CocosFormHelper implements IFormHelper {
             throw new Error("[CocosFormHelper] instantiate 时 Prefab 未加载(load 未完成?)");
         }
         const node = instantiate(prefab);
+        mark("instantiate", `${node.name} children=${node.children.length}`);
         node.active = false;
         this._visuals.set(form, node);
         form.VisualRoot = node;
@@ -101,10 +111,9 @@ export default class CocosFormHelper implements IFormHelper {
     public addToGroup(form: UIForm, groupName: string): void {
         const node = this.requireVisual(form);
         const container = this.ensureGroupNode(groupName);
-        if (node.parent !== container) {
-            container.addChild(node);
-        }
+        container.addChild(node);
         node.active = true;
+        mark("addToGroup", `${groupName} containerChildren=${container.children.length} nodeActive=${node.active} inScene=${node.scene != null}`);
     }
 
     public release(form: UIForm): void {
